@@ -1,0 +1,29 @@
+version: 2
+project_name: terraform-provider-hp2350
+builds:
+  - env:
+      - CGO_ENABLED=0
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    flags:
+      - -trimpath
+    ldflags:
+      - "-s -w -X main.version={{.Version}}"
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: 386
+    binaries:
+      - name: terraform-provider-hp2350
+        path: .
+archive:
+  formats:
+    - zip
+  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+checksum:
+  name_template: "{{ .Name }}_{{ .Version }}_SHA256SUMS"
