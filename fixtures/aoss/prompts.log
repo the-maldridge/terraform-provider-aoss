@@ -1,0 +1,2 @@
+privileged_exec: "idf02#"
+configuration: "idf02(config)#"

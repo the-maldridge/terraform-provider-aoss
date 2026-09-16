@@ -1,0 +1,15 @@
+Value release (.*)
+Value hostname (.*)
+
+# Parse the output of "show running-config" on an HP AOS-S switch.
+#
+# The running config is a nested block structure, not a table, so this
+# template is deliberately minimal: it captures the software release from
+# the header comment line and the device hostname from the hostname
+# statement. Nested blocks (vlan, interface, ip route, management-vlan,
+# password manager) are not parsed here.
+
+
+Start
+  ^; .*Created on release #(?P<release>YA\.[\d.]+)\s*$ -> Continue
+  ^hostname "(?P<hostname>\S+)"\s*$ -> Record

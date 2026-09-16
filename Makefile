@@ -1,8 +1,8 @@
 TEST ?= $$(go list ./... | grep -v 'vendor')
 GOFMT_FILES ?= $$(find . -name '*.go' | grep -v vendor)
 HOSTNAME ?= registry.terraform.io
-NAMESPACE ?= maldridge
-NAME ?= hp2350
+NAMESPACE ?= the-maldridge
+NAME ?= aoss
 BINARY ?= terraform-provider-${NAME}
 VERSION ?= 0.1.0
 OS_ARCH ?= $(shell go env GOOS)_$(shell go env GOARCH)

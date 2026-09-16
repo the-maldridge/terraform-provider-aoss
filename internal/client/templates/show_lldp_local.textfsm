@@ -1,0 +1,32 @@
+Value chassis_id (.*)
+Value system_name (.*)
+Value system_description (.*)
+Value system_caps_supported (.*)
+Value system_caps_enabled (.*)
+Value mgmt_type (.*)
+Value mgmt_address (.*)
+
+# Parse the output of "show lldp local" on an HP AOS-S switch.
+#
+# A single logical record: the "LLDP Local Device Information" block. The
+# "LLDP Port Information" table that follows is a per-port listing and is
+# intentionally ignored - its rules are anchored to the specific label
+# lines above so nothing in the table matches.
+#
+# Notes on the label lines:
+#   - "System Capabilities Supported:" and "Enabled:" have no space before
+#     the colon, so the rules use \s*: (zero or more).
+#   - "Type:" and "Address:" are indented five spaces under the
+#     "Management Address :" line; \s+Type does not match
+#     "Chassis Type :" because the label word is not the first token.
+#   - "Chassis Type : mac-address" is not captured on purpose.
+
+
+Start
+  ^\s+Chassis Id\s*:\s*(?P<chassis_id>\S.*?)\s*$ -> Continue
+  ^\s+System Name\s*:\s*(?P<system_name>\S+)\s*$ -> Continue
+  ^\s+System Description\s*:\s*(?P<system_description>\S.*?)\s*$ -> Continue
+  ^\s+System Capabilities Supported\s*:\s*(?P<system_caps_supported>\S+)\s*$ -> Continue
+  ^\s+System Capabilities Enabled\s*:\s*(?P<system_caps_enabled>\S+)\s*$ -> Continue
+  ^\s+Type\s*:\s*(?P<mgmt_type>\S+)\s*$ -> Continue
+  ^\s+Address\s*:\s*(?P<mgmt_address>\S+)\s*$ -> Record

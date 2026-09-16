@@ -1,0 +1,21 @@
+Value destination (.*)
+Value gateway (.*)
+Value vlan (.*)
+Value type (.*)
+Value sub_type (.*)
+Value metric (.*)
+Value distance (.*)
+
+# Parse the output of "show ip route" on an HP AOS-S switch.
+#
+# Fixed-column table (term width 200 at collection time), 1-based column
+# starts: Destination 3, Gateway 22, VLAN 38, Type 43, Sub-Type 53,
+# Metric 64, Dist 75. Gateway and VLAN are blank on some rows, so after
+# anchoring on the CIDR in the Destination column the remaining fields are
+# matched positionally with fixed-width slices; parse.go trims the trailing
+# spaces out of each captured field (a blank field becomes ""). The CIDR
+# anchor also keeps the column header and the separator line from matching.
+
+
+Start
+  ^  (?P<destination>\d+\.\d+\.\d+\.\d+/\d{1,2}) +(?P<gateway>.{16})(?P<vlan>.{5})(?P<type>.{10})(?P<sub_type>.{11})(?P<metric>.{11})(?P<distance>\S+)\s*$ -> Record

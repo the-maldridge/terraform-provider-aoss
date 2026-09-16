@@ -1,0 +1,9 @@
+Image stamp:
+ /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be
+luru)
+                Jun 17 2025 02:34:30
+                YA.16.11.0026
+                444
+Boot Image:     Primary
+
+Boot ROM Version:    YA.15.20

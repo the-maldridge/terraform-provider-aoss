@@ -1,0 +1,62 @@
+# Platform definition for switches running HP AOS-S, verified against the
+# captured fixtures in fixtures/aoss/ (HPE 2530-24G-PoEP, YA.16.11.0026).
+#
+# Prompt facts from fixtures/aoss/prompts.log and raw_session.bin:
+#   privileged exec:  idf02#
+#   configuration:    idf02(config)#
+#   submodes:         idf02(vlan-1)#, idf02(eth-1)#  (same family)
+# Login lands directly in privileged exec ("#"). The ">" alternative is
+# kept in the privileged pattern because the collector cannot rule out an
+# exec-only account; it is excluded from config prompts via
+# prompt_excludes below (the unadorned "#" pattern also matches
+# "idf02(config)#", so the excludes are load-bearing, not defensive).
+#
+# AOS-S has no pager flag in exec other than "no page"; it is sent in
+# on_open_instructions so long show output streams as one block. The pager
+# quit key is Ctrl-C (used by the collector's resync path).
+#
+# After a password login the switch prints a restricted-rights legend
+# ending in "Press any key to continue" and waits for a keypress before
+# the first prompt. libscrapli has no banner handling, so the in-session
+# auth loop (bin transport) deadlocks on the legend; use the ssh2
+# transport, or point the username pattern at the legend text.
+# The root pattern is deliberately identical to the privileged_exec pattern,
+# not a loose "^.*[>#$]\\s?$": with read_size=1 the searchable buffer grows
+# byte by byte, so a trailing "#" in mid-stream output (e.g. the
+# "Created on release #YA.16.11.0026" line of show running-config) sits at
+# end-of-subject and "$" matches it, truncating the read at that point.
+prompt_pattern: '^[\w.\-@()/: ]{1,63}[>#$]\s?$'
+default_mode: 'privileged_exec'
+modes:
+  - name: 'privileged_exec'
+    # A leading space is allowed: libscrapli normalizes the line break
+    # before the prompt into a space in the searchable buffer, so the
+    # first prompt after login arrives as " idf02#".
+    prompt_pattern: '^[\w.\-@()/: ]{1,63}[>#$]\s?$'
+    prompt_excludes:
+      - '(config'
+    accessible_modes:
+      - name: 'configuration'
+        instructions:
+          - send_input:
+              input: 'config terminal'
+  - name: 'configuration'
+    prompt_pattern: '^[\w.\-@/: ]{1,63}\([\w.\-@/:]{1,63}\)[>#$]\s?$'
+    accessible_modes:
+      - name: 'privileged_exec'
+        instructions:
+          - send_input:
+              input: 'end'
+on_open_instructions:
+  - send_input:
+      input: 'no page'
+failure_indicators:
+  - 'Invalid input:'
+  - 'Incomplete input:'
+  - 'Ambiguous input:'
+  - 'Module not present for port or invalid port'
+  - 'too long. Allowed length is'
+on_close_instructions:
+  - write:
+      input: 'exit'
+ntc_templates_platform: 'hp_aoss'

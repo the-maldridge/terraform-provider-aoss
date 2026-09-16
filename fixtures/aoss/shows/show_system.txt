@@ -1,0 +1,21 @@
+ Status and Counters - General System Information
+
+  System Name        : idf02
+  System Contact     :
+  System Location    :
+
+  MAC Age Time (sec) : 300
+
+  Time Zone          : 0
+  Daylight Time Rule : None
+
+  Software revision  : YA.16.11.0026        Base MAC Addr      : 883a30-1a2020
+  ROM Version        : YA.15.20             Serial Number      : CN01FP47X1
+
+  Up Time            : 19 hours             Memory   - Total   : 67,108,864
+  CPU Util (%)       : 12                              Free    : 37,836,892
+
+  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022
+             Pkts Tx : 1797                 Buffers    Free    : 2899
+                                                       Lowest  : 2875
+                                                       Missed  : 0

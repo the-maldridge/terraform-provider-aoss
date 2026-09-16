@@ -1,5 +1,5 @@
 # Compiled provider binary
-/terraform-provider-hp2350
+/terraform-provider-aoss
 
 # goreleaser artifacts
 /dist/

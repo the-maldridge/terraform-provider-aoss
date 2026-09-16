@@ -1,0 +1,33 @@
+ Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+  1          0              0              0            0            off
+  2          0              0              0            0            off
+  3          0              0              0            0            off
+  4          0              0              0            0            off
+  5          0              0              0            0            off
+  6          0              0              0            0            off
+  7          0              0              0            0            off
+  8          0              0              0            0            off
+  9          0              0              0            0            off
+  10         0              0              0            0            off
+  11         0              0              0            0            off
+  12         0              0              0            0            off
+  13         0              0              0            0            off
+  14         0              0              0            0            off
+  15         0              0              0            0            off
+  16         0              0              0            0            off
+  17         0              0              0            0            off
+  18         0              0              0            0            off
+  19         0              0              0            0            off
+  20         0              0              0            0            off
+  21         0              0              0            0            off
+  22         0              0              0            0            off
+  23         0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+  25         0              0              0            0            off
+  26         0              0              0            0            off
+  27         0              0              0            0            off
+  28         0              0              0            0            off

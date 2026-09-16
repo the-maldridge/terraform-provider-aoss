@@ -1,0 +1,62 @@
+Value port (.*)
+Value name (.*)
+Value mac_address (.*)
+Value link_status (.*)
+Value port_enabled (.*)
+Value bytes_rx (.*)
+Value bytes_tx (.*)
+Value unicast_rx (.*)
+Value unicast_tx (.*)
+Value bcast_mcast_rx (.*)
+Value bcast_mcast_tx (.*)
+Value fcs_rx (.*)
+Value drops_tx (.*)
+Value alignment_rx (.*)
+Value collisions_tx (.*)
+Value runts_rx (.*)
+Value late_collisions_tx (.*)
+Value giants_rx (.*)
+Value excessive_collisions (.*)
+Value total_rx_errors (.*)
+Value deferred_tx (.*)
+Value discard_rx (.*)
+Value out_queue_len (.*)
+Value unknown_protos (.*)
+Value rate_rx_bps (.*)
+Value rate_tx_bps (.*)
+Value rate_unicast_rx_pps (.*)
+Value rate_unicast_tx_pps (.*)
+Value rate_bmcast_rx_pps (.*)
+Value rate_bmcast_tx_pps (.*)
+Value utilization_rx (.*)
+Value utilization_tx (.*)
+
+# Parse the output of "show interface <port>" (single port detail) on an
+# HP AOS-S switch.
+#
+# A single logical record. The port number comes from the header line;
+# most counter lines carry TWO fields at once (a "Label: value" pair in the
+# left and right columns), so each such rule captures both named groups.
+# The final Utilization line contains literal tabs and records.
+
+
+Start
+  ^\s+Status and Counters - Port Counters for port (?P<port>\d+)\s*$ -> Continue
+  ^\s+Name\s*:\s*(?P<name>\S*)\s*$ -> Continue
+  ^\s+MAC Address\s*:\s*(?P<mac_address>[\w-]+)\s*$ -> Continue
+  ^\s+Link Status\s*:\s*(?P<link_status>\S+)\s*$ -> Continue
+  ^\s+Port Enabled\s*:\s*(?P<port_enabled>\S+)\s*$ -> Continue
+  ^\s+Bytes Rx\s*:\s*(?P<bytes_rx>[\d,]+)\s+Bytes Tx\s*:\s*(?P<bytes_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Unicast Rx\s*:\s*(?P<unicast_rx>[\d,]+)\s+Unicast Tx\s*:\s*(?P<unicast_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Bcast/Mcast Rx\s*:\s*(?P<bcast_mcast_rx>[\d,]+)\s+Bcast/Mcast Tx\s*:\s*(?P<bcast_mcast_tx>[\d,]+)\s*$ -> Continue
+  ^\s+FCS Rx\s*:\s*(?P<fcs_rx>[\d,]+)\s+Drops Tx\s*:\s*(?P<drops_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Alignment Rx\s*:\s*(?P<alignment_rx>[\d,]+)\s+Collisions Tx\s*:\s*(?P<collisions_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Runts Rx\s*:\s*(?P<runts_rx>[\d,]+)\s+Late Colln Tx\s*:\s*(?P<late_collisions_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Giants Rx\s*:\s*(?P<giants_rx>[\d,]+)\s+Excessive Colln\s*:\s*(?P<excessive_collisions>[\d,]+)\s*$ -> Continue
+  ^\s+Total Rx Errors\s*:\s*(?P<total_rx_errors>[\d,]+)\s+Deferred Tx\s*:\s*(?P<deferred_tx>[\d,]+)\s*$ -> Continue
+  ^\s+Discard Rx\s*:\s*(?P<discard_rx>[\d,]+)\s+Out Queue Len\s*:\s*(?P<out_queue_len>[\d,]+)\s*$ -> Continue
+  ^\s+Unknown Protos\s*:\s*(?P<unknown_protos>[\d,]+)\s*$ -> Continue
+  ^\s+Total Rx \(bps\)\s*:\s*(?P<rate_rx_bps>[\d,]+)\s+Total Tx \(bps\)\s*:\s*(?P<rate_tx_bps>[\d,]+)\s*$ -> Continue
+  ^\s+Unicast Rx \(Pkts/sec\)\s*:\s*(?P<rate_unicast_rx_pps>[\d,]+)\s+Unicast Tx \(Pkts/sec\)\s*:\s*(?P<rate_unicast_tx_pps>[\d,]+)\s*$ -> Continue
+  ^\s+B/Mcast Rx \(Pkts/sec\)\s*:\s*(?P<rate_bmcast_rx_pps>[\d,]+)\s+B/Mcast Tx \(Pkts/sec\)\s*:\s*(?P<rate_bmcast_tx_pps>[\d,]+)\s*$ -> Continue
+  ^\s+Utilization Rx\s*:\s*(?P<utilization_rx>[\d,]+)\s*%.*Utilization Tx\s*:\s*(?P<utilization_tx>[\d,]+)\s*%\s*$ -> Record

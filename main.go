@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 
-	"github.com/maldridge/terraform-provider-hp2350/internal/provider"
+	"github.com/the-maldridge/terraform-provider-aoss/internal/provider"
 )
 
 var version string = "dev"
@@ -17,7 +17,7 @@ func main() {
 
 	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: provider.New(version),
-		ProviderAddr: "registry.terraform.io/maldridge/hp2350",
+		ProviderAddr: "registry.terraform.io/the-maldridge/aoss",
 		Debug:        debug,
 	})
 }

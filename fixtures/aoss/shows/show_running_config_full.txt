@@ -1,0 +1,72 @@
+Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager

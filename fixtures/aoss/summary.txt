@@ -1,0 +1,26 @@
+collector run summary
+=====================
+status: ok
+
+files captured:
+  fixtures/aoss/errors.log
+  fixtures/aoss/prompts.log
+  fixtures/aoss/raw_session.bin
+  fixtures/aoss/running_config.cfg
+  fixtures/aoss/scrapli.log
+  fixtures/aoss/session.log
+  fixtures/aoss/show_version.txt
+  fixtures/aoss/shows/show_arp.txt
+  fixtures/aoss/shows/show_interface_detail.txt
+  fixtures/aoss/shows/show_interfaces.txt
+  fixtures/aoss/shows/show_ip_route.txt
+  fixtures/aoss/shows/show_lldp_local.txt
+  fixtures/aoss/shows/show_lldp_remote.txt
+  fixtures/aoss/shows/show_running_config_full.txt
+  fixtures/aoss/shows/show_system.txt
+  fixtures/aoss/shows/show_time.txt
+  fixtures/aoss/shows/show_vlan.txt
+  fixtures/aoss/shows/show_vlan_detail.txt
+
+note: prompts.log holds the raw prompt strings; session.log
+holds the full transcript including mode transitions.

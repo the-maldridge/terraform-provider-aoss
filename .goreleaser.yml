@@ -1,5 +1,5 @@
 version: 2
-project_name: terraform-provider-hp2350
+project_name: terraform-provider-aoss
 builds:
   - env:
       - CGO_ENABLED=0
@@ -19,7 +19,7 @@ builds:
       - goos: darwin
         goarch: 386
     binaries:
-      - name: terraform-provider-hp2350
+      - name: terraform-provider-aoss
         path: .
 archive:
   formats:

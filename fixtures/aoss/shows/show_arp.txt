@@ -1,0 +1,5 @@
+ IP ARP table
+
+  IP Address       MAC Address       Type    Port
+  ---------------  ----------------- ------- ----
+  172.16.34.1      f41e57-36fd7c     dynamic 24

@@ -1,0 +1,20 @@
+Value local_port (.*)
+Value chassis_id (.*)
+Value port_id (.*)
+Value port_descr (.*)
+Value sys_name (.*)
+
+# Parse the output of "show lldp neighbors" on an HP AOS-S switch.
+#
+# Fixed-column table (term width 200 at collection time), 1-based column
+# starts: LocalPort 3, the "|" separator 13, ChassisId 15, PortId 34,
+# PortDescr 53, SysName 63. ChassisId may contain single spaces (a MAC
+# printed as space-separated hex pairs), so the columns are matched
+# positionally with fixed-width slices after the pipe; parse.go trims the
+# trailing spaces out of each captured field (a blank field becomes "").
+# The header and separator lines do not contain the pipe in the right
+# place and are ignored. One record per line.
+
+
+Start
+  ^  (?P<local_port>\d+)\s+\|\s+(?P<chassis_id>.{19})(?P<port_id>.{19})(?P<port_descr>.{10})(?P<sys_name>\S+)\s*$ -> Record

@@ -1,0 +1,16 @@
+Value id (.*)
+Value name (.*)
+Value status (.*)
+Value voice (.*)
+Value jumbo (.*)
+
+# Parse the output of "show vlan" on an HP AOS-S switch.
+#
+# Each data line looks like:
+#   "  1       DEFAULT_VLAN                     | Port-based No    No"
+# The summary lines before the table (Maximum VLANs, Primary VLAN,
+# Management VLAN) do not match and are ignored. One record per line.
+
+
+Start
+  ^\s+(?P<id>\d+)\s+(?P<name>[\w-]+)\s+\|\s+(?P<status>[\w-]+)\s+(?P<voice>[\w-]+)\s+(?P<jumbo>[\w-]+)\s*$ -> Record

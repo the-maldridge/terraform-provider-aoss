@@ -1,0 +1,2467 @@
+[2026-09-02T17:28:32-05:00] [trace] cli.zig:97: cli.Driver initializing
+[2026-09-02T17:28:32-05:00] [trace] session.zig:247: session.Session init requested
+[2026-09-02T17:28:32-05:00] [trace] transport-ssh2.zig:600: ssh2.Transport initializing
+[2026-09-02T17:28:32-05:00] [info] ffi-driver.FfiDriver: operation thread started
+[2026-09-02T17:28:32-05:00] [info] cli.Driver open requested
+[2026-09-02T17:28:32-05:00] [debug] cli.Driver creating new Result object for operation open
+[2026-09-02T17:28:32-05:00] [info] session.Session open requested
+[2026-09-02T17:28:32-05:00] [info] ssh2.Transport open requested
+[2026-09-02T17:28:32-05:00] [debug] ssh2.Transport initSocket requested
+[2026-09-02T17:28:32-05:00] [debug] ssh2.Transport initSession requested
+[2026-09-02T17:28:33-05:00] [debug] ssh2.Transport initKnownHost requested
+[2026-09-02T17:28:33-05:00] [debug] ssh2.Transport authenticate requested
+[2026-09-02T17:28:34-05:00] [info] ssh2.Transport open: authentication complete
+[2026-09-02T17:28:34-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:34-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:34-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:34-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:34-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:34-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:34-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:34-05:00] [info] session.Session read thread started
+[2026-09-02T17:28:34-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:34-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:34-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171025728234920, search depth: 512
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:502: session.Session readLoop: raw read 'HP J9773A 2530-24G-PoEP Switch\x0d\x0d\x0aSoftware revision YA.16.11.0026\x0d\x0d\x0a\x0d\x0d\x0a (C) Copyright 2025 Hewlett Packard Enterprise Development LP\x0d\x0a\x0d\x0a                      RESTRICTED RIGHTS LEGEND\x0d\x0a Confidential computer software. Valid license from Hewlett Packard Enterprise\x0d\x0a Development LP required for possession, use or copying. Consistent with FAR\x0d\x0a 12.211 and 12.212, Commercial Computer Software, Computer Software\x0d\x0a Documentation, and Technical Data for Commercial Items are licensed to the\x0d\x0a U.S. Government under vendor's standard commercial license.\x0d\x0a\x0d\x0a\x1b[1;13r\x1b[1;1H'
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'HP J9773A 2530-24G-PoEP Switch
+Software revision YA.16.11.0026
+
+ (C) Copyright 2025 Hewlett Packard Enterprise Development LP
+
+                      RESTRICTED RIGHTS LEGEND
+ Confidential computer software. Valid license from Hewlett Packard Enterprise
+ Development LP required for possession, use or copying. Consistent with FAR
+ 12.211 and 12.212, Commercial Computer Software, Computer Software
+ Documentation, and Technical Data for Commercial Items are licensed to the
+ U.S. Government under vendor's standard commercial license.
+
+'
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 536, searchable_len 512, match start/end in searchable buf 0/0, searchable_buf 'Switch
+Software revision YA.16.11.0026
+
+ (C) Copyright 2025 Hewlett Packard Enterprise Development LP
+
+                      RESTRICTED RIGHTS LEGEND
+ Confidential computer software. Valid license from Hewlett Packard Enterprise
+ Development LP required for possession, use or copying. Consistent with FAR
+ 12.211 and 12.212, Commercial Computer Software, Computer Software
+ Documentation, and Technical Data for Commercial Items are licensed to the
+ U.S. Government under vendor's standard commercial license.
+
+'
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;1HPress any key to continue\x1b[13;1H\x1b[?25h\x1b[24;27H\x1b[?6l\x1b[1;24r\x1b[?7h\x1b[2J\x1b[1;1H\x1b[1920;1920H\x1b[6n\x1b[1;1HYour previous successful login (as manager) was on 2026-09-02 22:19:13     \x0d\x0a from 192.168.16.12\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'HP J9773A 2530-24G-PoEP Switch
+Software revision YA.16.11.0026
+
+ (C) Copyright 2025 Hewlett Packard Enterprise Development LP
+
+                      RESTRICTED RIGHTS LEGEND
+ Confidential computer software. Valid license from Hewlett Packard Enterprise
+ Development LP required for possession, use or copying. Consistent with FAR
+ 12.211 and 12.212, Commercial Computer Software, Computer Software
+ Documentation, and Technical Data for Commercial Items are licensed to the
+ U.S. Government under vendor's standard commercial license.
+
+Press any key to continueYour previous successful login (as manager) was on 2026-09-02 22:19:13
+ from 192.168.16.12
+idf02#'
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 658, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '   RESTRICTED RIGHTS LEGEND
+ Confidential computer software. Valid license from Hewlett Packard Enterprise
+ Development LP required for possession, use or copying. Consistent with FAR
+ 12.211 and 12.212, Commercial Computer Software, Computer Software
+ Documentation, and Technical Data for Commercial Items are licensed to the
+ U.S. Government under vendor's standard commercial license.
+
+Press any key to continueYour previous successful login (as manager) was on 2026-09-02 22:19:13
+ from 192.168.16.12
+idf02#'
+[2026-09-02T17:28:35-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '   RESTRICTED RIGHTS LEGEND
+ Confidential computer software. Valid license from Hewlett Packard Enterprise
+ Development LP required for possession, use or copying. Consistent with FAR
+ 12.211 and 12.212, Commercial Computer Software, Computer Software
+ Documentation, and Technical Data for Commercial Items are licensed to the
+ U.S. Government under vendor's standard commercial license.
+
+Press any key to continueYour previous successful login (as manager) was on 2026-09-02 22:19:13
+ from 192.168.16.12
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:35-05:00] [info] cli.Driver open: on open callback set, executing...
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver creating new Result object for operation on_open
+[2026-09-02T17:28:35-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver sendInput: input 'no page'
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:35-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver enterMode: mode 'privileged_exec', current mode '__unknown__'
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:35-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:35-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:35-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:35-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:35-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:35-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171026360455364, search depth: 512
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;8H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:35-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:35-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:35-05:00] [info] cli.Driver enterMode: current mode is requested mode, nothing to do
+[2026-09-02T17:28:35-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:35-05:00] [debug] session.Session sendInput: input 'no page'
+[2026-09-02T17:28:35-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 7, input 'no page'
+[2026-09-02T17:28:35-05:00] [debug] session.Session write requested, buf: 'no page'
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:35-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:35-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171026744194279, search depth: 512
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hno page\x1b[24;8H\x1b[?25h\x1b[24;15H'
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# no page'
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 8, match start/end in searchable buf 1/8, searchable_buf ' no page'
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' no page', match: 'no page'
+[2026-09-02T17:28:36-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171026744194279, search depth: 512
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;15H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# no pageidf02#'
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 20, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:36-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:36-05:00] [debug] cli.Driver sendInput: input 'show version'
+[2026-09-02T17:28:36-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:36-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session sendInput: input 'show version'
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 12, input 'show version'
+[2026-09-02T17:28:36-05:00] [debug] session.Session write requested, buf: 'show version'
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171027405860351, search depth: 512
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow versi\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hon\x1b[24;18H\x1b[?25h\x1b[24;20H'
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show version'
+[2026-09-02T17:28:36-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 19, searchable_len 13, match start/end in searchable buf 1/13, searchable_buf ' show version'
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show version', match: 'show version'
+[2026-09-02T17:28:36-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:36-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171027405860351, search depth: 512
+[2026-09-02T17:28:36-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:36-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;20H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0aImage stamp:   \x0d\x0a /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be\x0d\x0aluru)\x0d\x0a                Jun 17 2025 02:34:30\x0d\x0a                YA.16.11.0026\x0d\x0a                444\x0d\x0aBoot Image:     Primary\x0d\x0a\x0d\x0aBoot ROM Version:    YA.15.20\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Image stamp:
+ /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be
+luru)
+                Jun 17 2025 02:34:30
+                YA.16.11.0026
+                444
+Boot Image:     Primary
+
+Boot ROM Version:    YA.15.20
+idf02#'
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 248, searchable_len 248, match start/end in searchable buf 242/248, searchable_buf 'Image stamp:
+ /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be
+luru)
+                Jun 17 2025 02:34:30
+                YA.16.11.0026
+                444
+Boot Image:     Primary
+
+Boot ROM Version:    YA.15.20
+idf02#'
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Image stamp:
+ /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be
+luru)
+                Jun 17 2025 02:34:30
+                YA.16.11.0026
+                444
+Boot Image:     Primary
+
+Boot ROM Version:    YA.15.20
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:37-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver enterMode: mode 'privileged_exec', current mode 'privileged_exec'
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:37-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:37-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171028112361463, search depth: 512
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;8H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:37-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver enterMode: mode 'configuration', current mode 'privileged_exec'
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:37-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:37-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171028420327584, search depth: 512
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;8H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'privileged_exec'
+[2026-09-02T17:28:37-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver sendInput: input 'config terminal'
+[2026-09-02T17:28:37-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:37-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session sendInput: input 'config terminal'
+[2026-09-02T17:28:37-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 15, input 'config terminal'
+[2026-09-02T17:28:37-05:00] [debug] session.Session write requested, buf: 'config terminal'
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:37-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171028744509812, search depth: 512
+[2026-09-02T17:28:37-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:37-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hconfig ter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hminal\x1b[24;18H\x1b[?25h\x1b[24;23H'
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminal'
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 22, searchable_len 16, match start/end in searchable buf 1/16, searchable_buf ' config terminal'
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' config terminal', match: 'config terminal'
+[2026-09-02T17:28:38-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171028744509812, search depth: 512
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;23H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminalidf02(config)#'
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 36, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:38-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'configuration'
+[2026-09-02T17:28:38-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:38-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:38-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171029481454438, search depth: 512
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;16H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:38-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:38-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:38-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:38-05:00] [debug] cli.Driver enterMode: mode 'privileged_exec', current mode 'configuration'
+[2026-09-02T17:28:38-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:38-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:38-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:38-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:38-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:38-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171029804386608, search depth: 512
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;16H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'configuration'
+[2026-09-02T17:28:39-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver sendInput: input 'end'
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:39-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session sendInput: input 'end'
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 3, input 'end'
+[2026-09-02T17:28:39-05:00] [debug] session.Session write requested, buf: 'end'
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171030127344176, search depth: 512
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hend\x1b[24;16H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# end'
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 18, searchable_len 4, match start/end in searchable buf 1/4, searchable_buf ' end'
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' end', match: 'end'
+[2026-09-02T17:28:39-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171030127344176, search depth: 512
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# endidf02#'
+[2026-09-02T17:28:39-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 24, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'privileged_exec'
+[2026-09-02T17:28:39-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver enterMode: mode 'configuration', current mode 'privileged_exec'
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:39-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:39-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:39-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:39-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171030773715945, search depth: 512
+[2026-09-02T17:28:39-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:39-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;8H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'privileged_exec'
+[2026-09-02T17:28:40-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver sendInput: input 'config terminal'
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:40-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session sendInput: input 'config terminal'
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 15, input 'config terminal'
+[2026-09-02T17:28:40-05:00] [debug] session.Session write requested, buf: 'config terminal'
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171031081286680, search depth: 512
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hconfig ter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hminal\x1b[24;18H\x1b[?25h\x1b[24;23H'
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminal'
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 22, searchable_len 16, match start/end in searchable buf 1/16, searchable_buf ' config terminal'
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' config terminal', match: 'config terminal'
+[2026-09-02T17:28:40-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171031081286680, search depth: 512
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;23H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:40-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminalidf02(config)#'
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 36, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'configuration'
+[2026-09-02T17:28:40-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver sendInput: input 'vlan 1'
+[2026-09-02T17:28:40-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:40-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session sendInput: input 'vlan 1'
+[2026-09-02T17:28:40-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 6, input 'vlan 1'
+[2026-09-02T17:28:40-05:00] [debug] session.Session write requested, buf: 'vlan 1'
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:40-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:40-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171031832391205, search depth: 512
+[2026-09-02T17:28:41-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:41-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hvlan 1\x1b[24;16H\x1b[?25h\x1b[24;22H'
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# vlan 1'
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 21, searchable_len 7, match start/end in searchable buf 1/7, searchable_buf ' vlan 1'
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' vlan 1', match: 'vlan 1'
+[2026-09-02T17:28:42-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171031832391205, search depth: 512
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;22H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(vlan-1)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(vlan-1)#'
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(vlan-1)#'
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(vlan-1)#', match: 'idf02(vlan-1)#'
+[2026-09-02T17:28:42-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:42-05:00] [debug] cli.Driver sendInput: input 'exit'
+[2026-09-02T17:28:42-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:42-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session sendInput: input 'exit'
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 4, input 'exit'
+[2026-09-02T17:28:42-05:00] [debug] session.Session write requested, buf: 'exit'
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171033487826957, search depth: 512
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hexit\x1b[24;16H\x1b[?25h\x1b[24;20H'
+[2026-09-02T17:28:42-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(vlan-1)# exit'
+[2026-09-02T17:28:42-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 19, searchable_len 5, match start/end in searchable buf 1/5, searchable_buf ' exit'
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' exit', match: 'exit'
+[2026-09-02T17:28:42-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:42-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:42-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171033487826957, search depth: 512
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;20H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:43-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:43-05:00] [debug] cli.Driver sendInput: input 'interface 1'
+[2026-09-02T17:28:43-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:43-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session sendInput: input 'interface 1'
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 11, input 'interface 1'
+[2026-09-02T17:28:43-05:00] [debug] session.Session write requested, buf: 'interface 1'
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171034163727893, search depth: 512
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hinterface \x1b[24;16H\x1b[?25h\x1b[24;26H\x1b[24;26H1\x1b[24;26H\x1b[?25h\x1b[24;27H'
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# interface 1'
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 26, searchable_len 12, match start/end in searchable buf 1/12, searchable_buf ' interface 1'
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' interface 1', match: 'interface 1'
+[2026-09-02T17:28:43-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171034163727893, search depth: 512
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;27H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(eth-1)# \x1b[24;1H\x1b[24;15H\x1b[24;1H\x1b[?25h\x1b[24;15H'
+[2026-09-02T17:28:43-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(eth-1)#'
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 13, searchable_len 13, match start/end in searchable buf 0/13, searchable_buf 'idf02(eth-1)#'
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(eth-1)#', match: 'idf02(eth-1)#'
+[2026-09-02T17:28:43-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:43-05:00] [debug] cli.Driver sendInput: input 'exit'
+[2026-09-02T17:28:43-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:43-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session sendInput: input 'exit'
+[2026-09-02T17:28:43-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 4, input 'exit'
+[2026-09-02T17:28:43-05:00] [debug] session.Session write requested, buf: 'exit'
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:43-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:43-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171034794615324, search depth: 512
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;15Hexit\x1b[24;15H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(eth-1)# exit'
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 18, searchable_len 5, match start/end in searchable buf 1/5, searchable_buf ' exit'
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' exit', match: 'exit'
+[2026-09-02T17:28:44-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171034794615324, search depth: 512
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver enterMode: mode 'privileged_exec', current mode 'configuration'
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:44-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:44-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171035471319893, search depth: 512
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;16H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:44-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'configuration'
+[2026-09-02T17:28:44-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver sendInput: input 'end'
+[2026-09-02T17:28:44-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:44-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session sendInput: input 'end'
+[2026-09-02T17:28:44-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 3, input 'end'
+[2026-09-02T17:28:44-05:00] [debug] session.Session write requested, buf: 'end'
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:44-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:44-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171035794187403, search depth: 512
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hend\x1b[24;16H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# end'
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 18, searchable_len 4, match start/end in searchable buf 1/4, searchable_buf ' end'
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' end', match: 'end'
+[2026-09-02T17:28:45-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171035794187403, search depth: 512
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# endidf02#'
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 24, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:45-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'privileged_exec'
+[2026-09-02T17:28:45-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:45-05:00] [debug] cli.Driver sendInput: input 'show badcommand123'
+[2026-09-02T17:28:45-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:45-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session sendInput: input 'show badcommand123'
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 18, input 'show badcommand123'
+[2026-09-02T17:28:45-05:00] [debug] session.Session write requested, buf: 'show badcommand123'
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171036470410787, search depth: 512
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow badco\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hmmand123\x1b[24;18H\x1b[?25h\x1b[24;26H'
+[2026-09-02T17:28:45-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show badcommand123'
+[2026-09-02T17:28:45-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 25, searchable_len 19, match start/end in searchable buf 1/19, searchable_buf ' show badcommand123'
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show badcommand123', match: 'show badcommand123'
+[2026-09-02T17:28:45-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:45-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:45-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171036470410787, search depth: 512
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;26H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HInvalid input: badcommand123\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Invalid input: badcommand123
+idf02#'
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 35, searchable_len 35, match start/end in searchable buf 29/35, searchable_buf 'Invalid input: badcommand123
+idf02#'
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Invalid input: badcommand123
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:46-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:46-05:00] [debug] cli.Driver sendInput: input 'show'
+[2026-09-02T17:28:46-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:46-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session sendInput: input 'show'
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 4, input 'show'
+[2026-09-02T17:28:46-05:00] [debug] session.Session write requested, buf: 'show'
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171037131709961, search depth: 512
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow\x1b[24;8H\x1b[?25h\x1b[24;12H'
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show'
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 11, searchable_len 5, match start/end in searchable buf 1/5, searchable_buf ' show'
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show', match: 'show'
+[2026-09-02T17:28:46-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171037131709961, search depth: 512
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;12H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HIncomplete input: show\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:46-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Incomplete input: show
+idf02#'
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 29, searchable_len 29, match start/end in searchable buf 23/29, searchable_buf 'Incomplete input: show
+idf02#'
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Incomplete input: show
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:46-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:46-05:00] [debug] cli.Driver sendInput: input 'show interfaces bogus0/0'
+[2026-09-02T17:28:46-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:46-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session sendInput: input 'show interfaces bogus0/0'
+[2026-09-02T17:28:46-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 24, input 'show interfaces bogus0/0'
+[2026-09-02T17:28:46-05:00] [debug] session.Session write requested, buf: 'show interfaces bogus0/0'
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:46-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:46-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171037792910618, search depth: 512
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow inter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hfaces bogu\x1b[24;18H\x1b[?25h\x1b[24;28H\x1b[24;28Hs0/0\x1b[24;28H\x1b[?25h\x1b[24;32H'
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show interfaces bogus0/0'
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 31, searchable_len 25, match start/end in searchable buf 1/25, searchable_buf ' show interfaces bogus0/0'
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show interfaces bogus0/0', match: 'show interfaces bogus0/0'
+[2026-09-02T17:28:47-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171037792910618, search depth: 512
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;32H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HModule not present for port or invalid port: bogus0/0\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Module not present for port or invalid port: bogus0/0
+idf02#'
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 60, searchable_len 60, match start/end in searchable buf 54/60, searchable_buf 'Module not present for port or invalid port: bogus0/0
+idf02#'
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Module not present for port or invalid port: bogus0/0
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:47-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver enterMode: mode 'configuration', current mode 'privileged_exec'
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:47-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:47-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171038454424537, search depth: 512
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;8H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:47-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'privileged_exec'
+[2026-09-02T17:28:47-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver sendInput: input 'config terminal'
+[2026-09-02T17:28:47-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:47-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session sendInput: input 'config terminal'
+[2026-09-02T17:28:47-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 15, input 'config terminal'
+[2026-09-02T17:28:47-05:00] [debug] session.Session write requested, buf: 'config terminal'
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:47-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:47-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171038762692077, search depth: 512
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hconfig ter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hminal\x1b[24;18H\x1b[?25h\x1b[24;23H'
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminal'
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 22, searchable_len 16, match start/end in searchable buf 1/16, searchable_buf ' config terminal'
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' config terminal', match: 'config terminal'
+[2026-09-02T17:28:48-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171038762692077, search depth: 512
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;23H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# config terminalidf02(config)#'
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 36, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:48-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'configuration' is: 'configuration'
+[2026-09-02T17:28:48-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:48-05:00] [debug] cli.Driver sendInput: input 'badcommand123'
+[2026-09-02T17:28:48-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:48-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session sendInput: input 'badcommand123'
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 13, input 'badcommand123'
+[2026-09-02T17:28:48-05:00] [debug] session.Session write requested, buf: 'badcommand123'
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171039439807192, search depth: 512
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hbadcommand\x1b[24;16H\x1b[?25h\x1b[24;26H\x1b[24;26H123\x1b[24;26H\x1b[?25h\x1b[24;29H'
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# badcommand123'
+[2026-09-02T17:28:48-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 28, searchable_len 14, match start/end in searchable buf 1/14, searchable_buf ' badcommand123'
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' badcommand123', match: 'badcommand123'
+[2026-09-02T17:28:48-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:48-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171039439807192, search depth: 512
+[2026-09-02T17:28:48-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:48-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;29H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HInvalid input: badcommand123\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Invalid input: badcommand123
+idf02(config)#'
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 43, searchable_len 43, match start/end in searchable buf 29/43, searchable_buf 'Invalid input: badcommand123
+idf02(config)#'
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Invalid input: badcommand123
+idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:49-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:49-05:00] [debug] cli.Driver sendInput: input 'vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:49-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session sendInput: input 'vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 76, input 'vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [debug] session.Session write requested, buf: 'vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171040026232950, search depth: 512
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hvlan 1 nam\x1b[24;16H\x1b[?25h\x1b[24;26H\x1b[24;26He xxxxxxxx\x1b[24;26H\x1b[?25h\x1b[24;36H\x1b[24;36Hxxxxxxxxxx\x1b[24;36H\x1b[?25h\x1b[24;46H\x1b[24;46Hxxxxxxxxxx\x1b[24;46H\x1b[?25h\x1b[24;56H\x1b[24;56Hxxxxxxxxxx\x1b[24;56H\x1b[?25h\x1b[24;66H\x1b[24;66Hxxxxxxxxxx\x1b[24;66H\x1b[?25h\x1b[24;76H\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;76H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[23;76Hxxxxx\x1b[24;1H\x1b[24;1Hxxxxx\x1b[24;1H\x1b[?25h\x1b[24;6H\x1b[24;6Hxxxxxx\x1b[24;6H\x1b[?25h\x1b[24;12H'
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 91, searchable_len 77, match start/end in searchable buf 1/77, searchable_buf ' vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', match: 'vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+[2026-09-02T17:28:49-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171040026232950, search depth: 512
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;12H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HString xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32\x0d\x0a characters.\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'String xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32
+ characters.
+idf02(config)#'
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 98, searchable_len 98, match start/end in searchable buf 84/98, searchable_buf 'String xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32
+ characters.
+idf02(config)#'
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'String xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32
+ characters.
+idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:49-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:49-05:00] [debug] cli.Driver sendInput: input 'interface bogus0/0'
+[2026-09-02T17:28:49-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:49-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session sendInput: input 'interface bogus0/0'
+[2026-09-02T17:28:49-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 18, input 'interface bogus0/0'
+[2026-09-02T17:28:49-05:00] [debug] session.Session write requested, buf: 'interface bogus0/0'
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:49-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171040688345880, search depth: 512
+[2026-09-02T17:28:49-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:49-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hinterface \x1b[24;16H\x1b[?25h\x1b[24;26H\x1b[24;26Hbogus0/0\x1b[24;26H\x1b[?25h\x1b[24;34H'
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# interface bogus0/0'
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 33, searchable_len 19, match start/end in searchable buf 1/19, searchable_buf ' interface bogus0/0'
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' interface bogus0/0', match: 'interface bogus0/0'
+[2026-09-02T17:28:50-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171040688345880, search depth: 512
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;34H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HModule not present for port or invalid port: bogus0/0\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Module not present for port or invalid port: bogus0/0
+idf02(config)#'
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 68, searchable_len 68, match start/end in searchable buf 54/68, searchable_buf 'Module not present for port or invalid port: bogus0/0
+idf02(config)#'
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Module not present for port or invalid port: bogus0/0
+idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:50-05:00] [info] cli.Driver enterMode requested
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver enterMode: mode 'privileged_exec', current mode 'configuration'
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver creating new Result object for operation enter_mode
+[2026-09-02T17:28:50-05:00] [info] cli.Driver getPrompt requested
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver creating new Result object for operation get_prompt
+[2026-09-02T17:28:50-05:00] [info] session.Session getPrompt requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171041349778376, search depth: 512
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;16H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02(config)# \x1b[24;1H\x1b[24;16H\x1b[24;1H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)#'
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 14, searchable_len 14, match start/end in searchable buf 0/14, searchable_buf 'idf02(config)#'
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02(config)#', match: 'idf02(config)#'
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'configuration'
+[2026-09-02T17:28:50-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver sendInput: input 'end'
+[2026-09-02T17:28:50-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:50-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session sendInput: input 'end'
+[2026-09-02T17:28:50-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 3, input 'end'
+[2026-09-02T17:28:50-05:00] [debug] session.Session write requested, buf: 'end'
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:50-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171041642675463, search depth: 512
+[2026-09-02T17:28:50-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:50-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:51-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:51-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:51-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;16Hend\x1b[24;16H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:28:51-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:51-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:51-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# end'
+[2026-09-02T17:28:51-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 18, searchable_len 4, match start/end in searchable buf 1/4, searchable_buf ' end'
+[2026-09-02T17:28:51-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' end', match: 'end'
+[2026-09-02T17:28:51-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:51-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:51-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:51-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:51-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171041642675463, search depth: 512
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02(config)# endidf02#'
+[2026-09-02T17:28:52-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 24, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:28:52-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:28:52-05:00] [debug] cli.Driver enterMode: determined next step to requested mode 'privileged_exec' is: 'privileged_exec'
+[2026-09-02T17:28:52-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:52-05:00] [debug] cli.Driver sendInput: input 'show running-config'
+[2026-09-02T17:28:52-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:52-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:52-05:00] [debug] session.Session sendInput: input 'show running-config'
+[2026-09-02T17:28:52-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 19, input 'show running-config'
+[2026-09-02T17:28:52-05:00] [debug] session.Session write requested, buf: 'show running-config'
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:52-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171043253393102, search depth: 512
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow runni\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hng-config\x1b[24;18H\x1b[?25h\x1b[24;27H'
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:52-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show running-config'
+[2026-09-02T17:28:52-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 26, searchable_len 20, match start/end in searchable buf 1/20, searchable_buf ' show running-config'
+[2026-09-02T17:28:52-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show running-config', match: 'show running-config'
+[2026-09-02T17:28:52-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:52-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:52-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171043253393102, search depth: 512
+[2026-09-02T17:28:52-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:52-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;27H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0aRunning configuration:\x0d\x0a\x0d\x0a'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+'
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 24, searchable_len 24, match start/end in searchable buf 0/0, searchable_buf 'Running configuration:
+
+'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:502: session.Session readLoop: raw read '; J9773A Configuration Editor; Created on release #YA.16.11.0026\x0d\x0a; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05\x0d\x0ahostname "idf02"\x0d\x0ano telnet-server\x0d\x0ano web-management\x0d\x0aweb-management ssl\x0d\x0aip route 0.0.0.0 0.0.0.0 172.16.34.1\x0d\x0ainterface 24\x0d\x0a   name "OPTIMUX-TIE"\x0d\x0a   exit\x0d\x0asnmp-server community "public"\x0d\x0avlan 1\x0d\x0a   name "DEFAULT_VLAN"\x0d\x0a   no untagged 1-23\x0d\x0a   untagged 24-28\x0d\x0a   ip address dhcp-bootp\x0d\x0a   exit\x0d\x0avlan 10\x0d\x0a   name "LAN"\x0d\x0a   untagged 1-23\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 15\x0d\x0a   name "TRUST"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 20\x0d\x0a   name "WAN"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 25\x0d\x0a   name "MEDIA"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 30\x0d\x0a   name "MGMT"\x0d\x0a   tagged 24-28\x0d\x0a   ip address dhcp-bootp\x0d\x0a   exit\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1Hvlan 500\x0d\x0a   name "VLAN500"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 501\x0d\x0a   name "VLAN501"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 502\x0d\x0a   name "VLAN502"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 503\x0d\x0a   name "VLAN503"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 504\x0d\x0a   name "VLAN504"\x0d\x0a   tagged 24-28\x0d\x0a'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+'
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1105, searchable_len 512, match start/end in searchable buf 0/0, searchable_buf 'n 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H   no ip address\x0d\x0a   exit\x0d\x0amanagement-vlan 30\x0d\x0apassword manager\x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#'
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1173, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#'
+[2026-09-02T17:28:53-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:53-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:53-05:00] [debug] cli.Driver sendInput: input 'show vlan'
+[2026-09-02T17:28:53-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:53-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:53-05:00] [debug] session.Session sendInput: input 'show vlan'
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 9, input 'show vlan'
+[2026-09-02T17:28:53-05:00] [debug] session.Session write requested, buf: 'show vlan'
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:53-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171044424324445, search depth: 512
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow vlan\x1b[24;8H\x1b[?25h\x1b[24;17H'
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show vlan'
+[2026-09-02T17:28:53-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 16, searchable_len 10, match start/end in searchable buf 1/10, searchable_buf ' show vlan'
+[2026-09-02T17:28:53-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show vlan', match: 'show vlan'
+[2026-09-02T17:28:53-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:53-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:53-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171044424324445, search depth: 512
+[2026-09-02T17:28:53-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:53-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;17H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a Status and Counters - VLAN Information\x0d\x0a\x0d\x0a'
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - VLAN Information
+
+'
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 41, searchable_len 41, match start/end in searchable buf 0/0, searchable_buf ' Status and Counters - VLAN Information
+
+'
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:502: session.Session readLoop: raw read '  Maximum VLANs to support : 256                  \x0d\x0a  Primary VLAN : DEFAULT_VLAN\x0d\x0a  Management VLAN : MGMT        \x0d\x0a\x0d\x0a  VLAN ID Name                             | Status     Voice Jumbo\x0d\x0a  ------- -------------------------------- + ---------- ----- -----\x0d\x0a  1       DEFAULT_VLAN                     | Port-based No    No   \x0d\x0a  10      LAN                              | Port-based No    No   \x0d\x0a  15      TRUST                            | Port-based No    No   \x0d\x0a  20      WAN                              | Port-based No    No   \x0d\x0a  25      MEDIA                            | Port-based No    No   \x0d\x0a  30      MGMT                             | Port-based No    No   \x0d\x0a  500     VLAN500                          | Port-based No    No   \x0d\x0a  501     VLAN501                          | Port-based No    No   \x0d\x0a  502     VLAN502                          | Port-based No    No   \x0d\x0a  503     VLAN503                          | Port-based No    No   \x0d\x0a  504     VLAN504                          | Port-based No    No   \x0d\x0a \x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - VLAN Information
+
+  Maximum VLANs to support : 256
+  Primary VLAN : DEFAULT_VLAN
+  Management VLAN : MGMT
+
+  VLAN ID Name                             | Status     Voice Jumbo
+  ------- -------------------------------- + ---------- ----- -----
+  1       DEFAULT_VLAN                     | Port-based No    No
+  10      LAN                              | Port-based No    No
+  15      TRUST                            | Port-based No    No
+  20      WAN                              | Port-based No    No
+  25      MEDIA                            | Port-based No    No
+  30      MGMT                             | Port-based No    No
+  500     VLAN500                          | Port-based No    No
+  501     VLAN501                          | Port-based No    No
+  502     VLAN502                          | Port-based No    No
+  503     VLAN503                          | Port-based No    No
+  504     VLAN504                          | Port-based No    No
+
+
+idf02#'
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 989, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '                           | Port-based No    No
+  25      MEDIA                            | Port-based No    No
+  30      MGMT                             | Port-based No    No
+  500     VLAN500                          | Port-based No    No
+  501     VLAN501                          | Port-based No    No
+  502     VLAN502                          | Port-based No    No
+  503     VLAN503                          | Port-based No    No
+  504     VLAN504                          | Port-based No    No
+
+
+idf02#'
+[2026-09-02T17:28:54-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '                           | Port-based No    No
+  25      MEDIA                            | Port-based No    No
+  30      MGMT                             | Port-based No    No
+  500     VLAN500                          | Port-based No    No
+  501     VLAN501                          | Port-based No    No
+  502     VLAN502                          | Port-based No    No
+  503     VLAN503                          | Port-based No    No
+  504     VLAN504                          | Port-based No    No
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:54-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:54-05:00] [debug] cli.Driver sendInput: input 'show vlan 1'
+[2026-09-02T17:28:54-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:54-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:54-05:00] [debug] session.Session sendInput: input 'show vlan 1'
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 11, input 'show vlan 1'
+[2026-09-02T17:28:54-05:00] [debug] session.Session write requested, buf: 'show vlan 1'
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:54-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171045181785033, search depth: 512
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow vlan \x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18H1\x1b[24;18H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show vlan 1'
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 18, searchable_len 12, match start/end in searchable buf 1/12, searchable_buf ' show vlan 1'
+[2026-09-02T17:28:54-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show vlan 1', match: 'show vlan 1'
+[2026-09-02T17:28:54-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:54-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:54-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171045181785033, search depth: 512
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a Status and Counters - VLAN Information - VLAN 1\x0d\x0a\x0d\x0a'
+[2026-09-02T17:28:54-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:54-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - VLAN Information - VLAN 1
+
+'
+[2026-09-02T17:28:54-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 50, searchable_len 50, match start/end in searchable buf 0/0, searchable_buf ' Status and Counters - VLAN Information - VLAN 1
+
+'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:502: session.Session readLoop: raw read '  VLAN ID : 1      \x0d\x0a  Name : DEFAULT_VLAN                    \x0d\x0a  Status : Port-based\x0d\x0a  Voice : No \x0d\x0a  Jumbo : No \x0d\x0a\x0d\x0a  Port Information Mode     Unknown VLAN Status    \x0d\x0a  ---------------- -------- ------------ ----------\x0d\x0a  24               Untagged Learn        Up        \x0d\x0a  25               Untagged Learn        Down      \x0d\x0a  26               Untagged Learn        Down      \x0d\x0a  27               Untagged Learn        Down      \x0d\x0a  28               Untagged Learn        Down      \x0d\x0a \x0d\x0a  Overridden Port VLAN configuration\x0d\x0a\x0d\x0a  Port  Mode        \x0d\x0a  ----- ------------\x0d\x0a \x0d\x0a\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - VLAN Information - VLAN 1
+
+  VLAN ID : 1
+  Name : DEFAULT_VLAN
+  Status : Port-based
+  Voice : No
+  Jumbo : No
+
+  Port Information Mode     Unknown VLAN Status
+  ---------------- -------- ------------ ----------
+  24               Untagged Learn        Up
+  25               Untagged Learn        Down
+  26               Untagged Learn        Down
+  27               Untagged Learn        Down
+  28               Untagged Learn        Down
+
+  Overridden Port VLAN configuration
+
+  Port  Mode
+  ----- ------------
+
+
+idf02#'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 544, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf 'rmation - VLAN 1
+
+  VLAN ID : 1
+  Name : DEFAULT_VLAN
+  Status : Port-based
+  Voice : No
+  Jumbo : No
+
+  Port Information Mode     Unknown VLAN Status
+  ---------------- -------- ------------ ----------
+  24               Untagged Learn        Up
+  25               Untagged Learn        Down
+  26               Untagged Learn        Down
+  27               Untagged Learn        Down
+  28               Untagged Learn        Down
+
+  Overridden Port VLAN configuration
+
+  Port  Mode
+  ----- ------------
+
+
+idf02#'
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'rmation - VLAN 1
+
+  VLAN ID : 1
+  Name : DEFAULT_VLAN
+  Status : Port-based
+  Voice : No
+  Jumbo : No
+
+  Port Information Mode     Unknown VLAN Status
+  ---------------- -------- ------------ ----------
+  24               Untagged Learn        Up
+  25               Untagged Learn        Down
+  26               Untagged Learn        Down
+  27               Untagged Learn        Down
+  28               Untagged Learn        Down
+
+  Overridden Port VLAN configuration
+
+  Port  Mode
+  ----- ------------
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:55-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:55-05:00] [debug] cli.Driver sendInput: input 'show interfaces'
+[2026-09-02T17:28:55-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:55-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session sendInput: input 'show interfaces'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 15, input 'show interfaces'
+[2026-09-02T17:28:55-05:00] [debug] session.Session write requested, buf: 'show interfaces'
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171045984675393, search depth: 512
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow inter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hfaces\x1b[24;18H\x1b[?25h\x1b[24;23H'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show interfaces'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 22, searchable_len 16, match start/end in searchable buf 1/16, searchable_buf ' show interfaces'
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show interfaces', match: 'show interfaces'
+[2026-09-02T17:28:55-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171045984675393, search depth: 512
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;23H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a Status and Counters - Port Counters\x0d\x0a\x0d\x0a                                                                     Flow\x0d\x0a  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl\x0d\x0a  ---------- -------------- -------------- ------------ ------------ ----\x0d\x0a'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 260, searchable_len 260, match start/end in searchable buf 0/0, searchable_buf ' Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:502: session.Session readLoop: raw read '  1          0              0              0            0            off \x0d\x0a  2          0              0              0            0            off \x0d\x0a  3          0              0              0            0            off \x0d\x0a  4          0              0              0            0            off \x0d\x0a  5          0              0              0            0            off \x0d\x0a  6          0              0              0            0            off \x0d\x0a  7          0              0              0            0            off \x0d\x0a  8          0              0              0            0            off \x0d\x0a  9          0              0              0            0            off \x0d\x0a  10         0              0              0            0            off \x0d\x0a  11         0              0              0            0            off \x0d\x0a  12         0              0              0            0            off \x0d\x0a  13         0              0              0            0            off \x0d\x0a  14         0              0              0            0            off \x0d\x0a  15         0              0              0            0            off \x0d\x0a  16         0              0              0            0            off \x0d\x0a  17         0              0              0            0            off \x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H  18         0              0              0            0            off \x0d\x0a  19         0              0              0            0            off \x0d\x0a  20         0              0              0            0            off \x0d\x0a  21         0              0              0            0            off \x0d\x0a  22         0              0              0            0            off \x0d\x0a  23         0              0              0            0            off \x0d\x0a  24         81,140,314     827,733        0            0            off \x0d\x0a  25         0              0              0            0            off \x0d\x0a  26         0              0              0            0            off \x0d\x0a  27         0              0              0            0            off \x0d\x0a  28         0              0              0            0            off \x0d\x0a \x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+  1          0              0              0            0            off
+  2          0              0              0            0            off
+  3          0              0              0            0            off
+  4          0              0              0            0            off
+  5          0              0              0            0            off
+  6          0              0              0            0            off
+  7          0              0              0            0            off
+  8          0              0              0            0            off
+  9          0              0              0            0            off
+  10         0              0              0            0            off
+  11         0              0              0            0            off
+  12         0              0              0            0            off
+  13         0              0              0            0            off
+  14         0              0              0            0            off
+  15         0              0              0            0            off
+  16         0              0              0            0            off
+  17         0              0              0            0            off
+  18         0              0              0            0            off
+  19         0              0              0            0            off
+  20         0              0              0            0            off
+  21         0              0              0            0            off
+  22         0              0              0            0            off
+  23         0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+  25         0              0              0            0            off
+  26         0              0              0            0            off
+  27         0              0              0            0            off
+  28         0              0              0            0            off
+
+idf02#'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 2311, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '       0              0              0            0            off
+  23         0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+  25         0              0              0            0            off
+  26         0              0              0            0            off
+  27         0              0              0            0            off
+  28         0              0              0            0            off
+
+idf02#'
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '       0              0              0            0            off
+  23         0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+  25         0              0              0            0            off
+  26         0              0              0            0            off
+  27         0              0              0            0            off
+  28         0              0              0            0            off
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:55-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:55-05:00] [debug] cli.Driver sendInput: input 'show interface 1'
+[2026-09-02T17:28:55-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:55-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session sendInput: input 'show interface 1'
+[2026-09-02T17:28:55-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 16, input 'show interface 1'
+[2026-09-02T17:28:55-05:00] [debug] session.Session write requested, buf: 'show interface 1'
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:55-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171046742904370, search depth: 512
+[2026-09-02T17:28:55-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:55-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow inter\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hface 1\x1b[24;18H\x1b[?25h\x1b[24;24H'
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show interface 1'
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 23, searchable_len 17, match start/end in searchable buf 1/17, searchable_buf ' show interface 1'
+[2026-09-02T17:28:58-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show interface 1', match: 'show interface 1'
+[2026-09-02T17:28:58-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:58-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:58-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171046742904370, search depth: 512
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;24H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a Status and Counters - Port Counters for port 1                       \x0d\x0a\x0d\x0a'
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - Port Counters for port 1
+
+'
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 49, searchable_len 49, match start/end in searchable buf 0/0, searchable_buf ' Status and Counters - Port Counters for port 1
+
+'
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:502: session.Session readLoop: raw read '  Name  :                                                                 \x0d\x0a  MAC Address      : 883a30-1a203f\x0d\x0a  Link Status      : Down\x0d\x0a  Port Enabled     : Yes    \x0d\x0a  Totals (Since boot or last clear) :                                    \x0d\x0a   Bytes Rx        : 0                    Bytes Tx        : 0                   \x0d\x0a   Unicast Rx      : 0                    Unicast Tx      : 0                   \x0d\x0a   Bcast/Mcast Rx  : 0                    Bcast/Mcast Tx  : 0                   \x0d\x0a  Errors (Since boot or last clear) :                                    \x0d\x0a   FCS Rx          : 0                    Drops Tx        : 0                   \x0d\x0a   Alignment Rx    : 0                    Collisions Tx   : 0                   \x0d\x0a   Runts Rx        : 0                    Late Colln Tx   : 0                   \x0d\x0a   Giants Rx       : 0                    Excessive Colln : 0                   \x0d\x0a   Total Rx Errors : 0                    Deferred Tx     : 0                   \x0d\x0a  Others (Since boot or last clear) :                                    \x0d\x0a   Discard Rx      : 0                    Out Queue Len   : 0                   \x0d\x0a   Unknown Protos  : 0                    \x0d\x0a  Rates (5 minute weighted average) :\x0d\x0a   Total Rx (bps) : 0                     Total Tx (bps) : 0                   \x0d\x0a   Unicast Rx (Pkts/sec) : 0              Unicast Tx (Pkts/sec) : 0            \x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H   B/Mcast Rx (Pkts/sec) : 0              B/Mcast Tx (Pkts/sec) : 0            \x0d\x0a   Utilization Rx  :     0 %\x09\x09  Utilization Tx  :     0 %\x0d\x0a\x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - Port Counters for port 1
+
+  Name  :
+  MAC Address      : 883a30-1a203f
+  Link Status      : Down
+  Port Enabled     : Yes
+  Totals (Since boot or last clear) :
+   Bytes Rx        : 0                    Bytes Tx        : 0
+   Unicast Rx      : 0                    Unicast Tx      : 0
+   Bcast/Mcast Rx  : 0                    Bcast/Mcast Tx  : 0
+  Errors (Since boot or last clear) :
+   FCS Rx          : 0                    Drops Tx        : 0
+   Alignment Rx    : 0                    Collisions Tx   : 0
+   Runts Rx        : 0                    Late Colln Tx   : 0
+   Giants Rx       : 0                    Excessive Colln : 0
+   Total Rx Errors : 0                    Deferred Tx     : 0
+  Others (Since boot or last clear) :
+   Discard Rx      : 0                    Out Queue Len   : 0
+   Unknown Protos  : 0
+  Rates (5 minute weighted average) :
+   Total Rx (bps) : 0                     Total Tx (bps) : 0
+   Unicast Rx (Pkts/sec) : 0              Unicast Tx (Pkts/sec) : 0
+   B/Mcast Rx (Pkts/sec) : 0              B/Mcast Tx (Pkts/sec) : 0
+   Utilization Rx  :     0 %		  Utilization Tx  :     0 %
+
+
+idf02#'
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1141, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '      Excessive Colln : 0
+   Total Rx Errors : 0                    Deferred Tx     : 0
+  Others (Since boot or last clear) :
+   Discard Rx      : 0                    Out Queue Len   : 0
+   Unknown Protos  : 0
+  Rates (5 minute weighted average) :
+   Total Rx (bps) : 0                     Total Tx (bps) : 0
+   Unicast Rx (Pkts/sec) : 0              Unicast Tx (Pkts/sec) : 0
+   B/Mcast Rx (Pkts/sec) : 0              B/Mcast Tx (Pkts/sec) : 0
+   Utilization Rx  :     0 %		  Utilization Tx  :     0 %
+
+
+idf02#'
+[2026-09-02T17:28:58-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '      Excessive Colln : 0
+   Total Rx Errors : 0                    Deferred Tx     : 0
+  Others (Since boot or last clear) :
+   Discard Rx      : 0                    Out Queue Len   : 0
+   Unknown Protos  : 0
+  Rates (5 minute weighted average) :
+   Total Rx (bps) : 0                     Total Tx (bps) : 0
+   Unicast Rx (Pkts/sec) : 0              Unicast Tx (Pkts/sec) : 0
+   B/Mcast Rx (Pkts/sec) : 0              B/Mcast Tx (Pkts/sec) : 0
+   Utilization Rx  :     0 %		  Utilization Tx  :     0 %
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:58-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:58-05:00] [debug] cli.Driver sendInput: input 'show ip route'
+[2026-09-02T17:28:58-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:58-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:58-05:00] [debug] session.Session sendInput: input 'show ip route'
+[2026-09-02T17:28:58-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 13, input 'show ip route'
+[2026-09-02T17:28:58-05:00] [debug] session.Session write requested, buf: 'show ip route'
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:58-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171049582520671, search depth: 512
+[2026-09-02T17:28:58-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:58-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow ip ro\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hute\x1b[24;18H\x1b[?25h\x1b[24;21H'
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show ip route'
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 20, searchable_len 14, match start/end in searchable buf 1/14, searchable_buf ' show ip route'
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show ip route', match: 'show ip route'
+[2026-09-02T17:28:59-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171049582520671, search depth: 512
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;21H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a                                IP Route Entries\x0d\x0a\x0d\x0a  Destination        Gateway         VLAN Type      Sub-Type   Metric     Dist.\x0d\x0a  ------------------ --------------- ---- --------- ---------- ---------- -----\x0d\x0a  0.0.0.0/0          172.16.34.1     30   static               1          1    \x0d\x0a  127.0.0.0/8        reject               static               0          0    \x0d\x0a  127.0.0.1/32                            connected            1          0    \x0d\x0a  172.16.34.0/24     MGMT            30   connected            1          0    \x0d\x0a \x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: '                                IP Route Entries
+
+  Destination        Gateway         VLAN Type      Sub-Type   Metric     Dist.
+  ------------------ --------------- ---- --------- ---------- ---------- -----
+  0.0.0.0/0          172.16.34.1     30   static               1          1
+  127.0.0.0/8        reject               static               0          0
+  127.0.0.1/32                            connected            1          0
+  172.16.34.0/24     MGMT            30   connected            1          0
+
+
+idf02#'
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 522, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '                      IP Route Entries
+
+  Destination        Gateway         VLAN Type      Sub-Type   Metric     Dist.
+  ------------------ --------------- ---- --------- ---------- ---------- -----
+  0.0.0.0/0          172.16.34.1     30   static               1          1
+  127.0.0.0/8        reject               static               0          0
+  127.0.0.1/32                            connected            1          0
+  172.16.34.0/24     MGMT            30   connected            1          0
+
+
+idf02#'
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '                      IP Route Entries
+
+  Destination        Gateway         VLAN Type      Sub-Type   Metric     Dist.
+  ------------------ --------------- ---- --------- ---------- ---------- -----
+  0.0.0.0/0          172.16.34.1     30   static               1          1
+  127.0.0.0/8        reject               static               0          0
+  127.0.0.1/32                            connected            1          0
+  172.16.34.0/24     MGMT            30   connected            1          0
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:28:59-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:28:59-05:00] [debug] cli.Driver sendInput: input 'show arp'
+[2026-09-02T17:28:59-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:28:59-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session sendInput: input 'show arp'
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 8, input 'show arp'
+[2026-09-02T17:28:59-05:00] [debug] session.Session write requested, buf: 'show arp'
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171050318782209, search depth: 512
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow arp\x1b[24;8H\x1b[?25h\x1b[24;16H'
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show arp'
+[2026-09-02T17:28:59-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 15, searchable_len 9, match start/end in searchable buf 1/9, searchable_buf ' show arp'
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show arp', match: 'show arp'
+[2026-09-02T17:28:59-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:28:59-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171050318782209, search depth: 512
+[2026-09-02T17:28:59-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:28:59-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;16H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a IP ARP table\x0d\x0a\x0d\x0a  IP Address       MAC Address       Type    Port\x0d\x0a  ---------------  ----------------- ------- ----\x0d\x0a  172.16.34.1      f41e57-36fd7c     dynamic 24  \x0d\x0a\x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' IP ARP table
+
+  IP Address       MAC Address       Type    Port
+  ---------------  ----------------- ------- ----
+  172.16.34.1      f41e57-36fd7c     dynamic 24
+
+
+idf02#'
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 171, searchable_len 171, match start/end in searchable buf 165/171, searchable_buf ' IP ARP table
+
+  IP Address       MAC Address       Type    Port
+  ---------------  ----------------- ------- ----
+  172.16.34.1      f41e57-36fd7c     dynamic 24
+
+
+idf02#'
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' IP ARP table
+
+  IP Address       MAC Address       Type    Port
+  ---------------  ----------------- ------- ----
+  172.16.34.1      f41e57-36fd7c     dynamic 24
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:29:00-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:00-05:00] [debug] cli.Driver sendInput: input 'show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:00-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session sendInput: input 'show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 28, input 'show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [debug] session.Session write requested, buf: 'show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171051086659490, search depth: 512
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow lldp \x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hinfo remot\x1b[24;18H\x1b[?25h\x1b[24;28H\x1b[24;28He-device\x1b[24;28H\x1b[?25h\x1b[24;36H'
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 35, searchable_len 29, match start/end in searchable buf 1/29, searchable_buf ' show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show lldp info remote-device', match: 'show lldp info remote-device'
+[2026-09-02T17:29:00-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171051086659490, search depth: 512
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;36H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a LLDP Remote Devices Information\x0d\x0a\x0d\x0a  LocalPort | ChassisId          PortId             PortDescr SysName           \x0d\x0a  --------- + ------------------ ------------------ --------- ------------------\x0d\x0a  24        | 38 32 7a 16 fe 18  ether1             br0/et... optimux1          \x0d\x0a  24        | edge0              br0/sfp-sfpplus3             MikroTik          \x0d\x0a  24        | edge0              mgmt0                        MikroTik          \x0d\x0a  24        | edge0              lan0                         MikroTik          \x0d\x0a  24        | edge0              wan0                         MikroTik          \x0d\x0a  24        | edge0              trust0                       MikroTik          \x0d\x0a  24        | edge0              media0                       MikroTik          \x0d\x0a  24        | optimux1           br0/ether1                   MikroTik          \x0d\x0a  24        | optimux1           mgmt0                        MikroTik          \x0d\x0a \x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:00-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' LLDP Remote Devices Information
+
+  LocalPort | ChassisId          PortId             PortDescr SysName
+  --------- + ------------------ ------------------ --------- ------------------
+  24        | 38 32 7a 16 fe 18  ether1             br0/et... optimux1
+  24        | edge0              br0/sfp-sfpplus3             MikroTik
+  24        | edge0              mgmt0                        MikroTik
+  24        | edge0              lan0                         MikroTik
+  24        | edge0              wan0                         MikroTik
+  24        | edge0              trust0                       MikroTik
+  24        | edge0              media0                       MikroTik
+  24        | optimux1           br0/ether1                   MikroTik
+  24        | optimux1           mgmt0                        MikroTik
+
+
+idf02#'
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 832, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf 'kroTik
+  24        | edge0              mgmt0                        MikroTik
+  24        | edge0              lan0                         MikroTik
+  24        | edge0              wan0                         MikroTik
+  24        | edge0              trust0                       MikroTik
+  24        | edge0              media0                       MikroTik
+  24        | optimux1           br0/ether1                   MikroTik
+  24        | optimux1           mgmt0                        MikroTik
+
+
+idf02#'
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'kroTik
+  24        | edge0              mgmt0                        MikroTik
+  24        | edge0              lan0                         MikroTik
+  24        | edge0              wan0                         MikroTik
+  24        | edge0              trust0                       MikroTik
+  24        | edge0              media0                       MikroTik
+  24        | optimux1           br0/ether1                   MikroTik
+  24        | optimux1           mgmt0                        MikroTik
+
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:29:00-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:00-05:00] [debug] cli.Driver sendInput: input 'show lldp info local-device'
+[2026-09-02T17:29:00-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:00-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session sendInput: input 'show lldp info local-device'
+[2026-09-02T17:29:00-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 27, input 'show lldp info local-device'
+[2026-09-02T17:29:00-05:00] [debug] session.Session write requested, buf: 'show lldp info local-device'
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:00-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:00-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171051898324965, search depth: 512
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow lldp \x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hinfo local\x1b[24;18H\x1b[?25h\x1b[24;28H\x1b[24;28H-device\x1b[24;28H\x1b[?25h\x1b[24;35H'
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show lldp info local-device'
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 34, searchable_len 28, match start/end in searchable buf 1/28, searchable_buf ' show lldp info local-device'
+[2026-09-02T17:29:01-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show lldp info local-device', match: 'show lldp info local-device'
+[2026-09-02T17:29:01-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:01-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:01-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171051898324965, search depth: 512
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;35H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a LLDP Local Device Information\x0d\x0a\x0d\x0a'
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' LLDP Local Device Information
+
+'
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 32, searchable_len 32, match start/end in searchable buf 0/0, searchable_buf ' LLDP Local Device Information
+
+'
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:502: session.Session readLoop: raw read '  Chassis Type : mac-address      \x0d\x0a  Chassis Id   : 88 3a 30 1a 20 20        \x0d\x0a  System Name  : idf02                           \x0d\x0a  System Description : HP J9773A 2530-24G-PoEP Switch, revision YA.16.11.00...\x0d\x0a  System Capabilities Supported: bridge\x0d\x0a  System Capabilities Enabled: bridge\x0d\x0a\x0d\x0a  Management Address  :\x0d\x0a     Type: ipv4\x0d\x0a     Address: 172.16.34.76\x0d\x0a\x0d\x0a LLDP Port Information\x0d\x0a\x0d\x0a  Port     PortType PortId   PortDesc\x0d\x0a  -------- -------- -------- --------\x0d\x0a  1        local    1        1       \x0d\x0a  2        local    2        2       \x0d\x0a  3        local    3        3       \x0d\x0a  4        local    4        4       \x0d\x0a  5        local    5        5       \x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H  6        local    6        6       \x0d\x0a  7        local    7        7       \x0d\x0a  8        local    8        8       \x0d\x0a  9        local    9        9       \x0d\x0a  10       local    10       10      \x0d\x0a  11       local    11       11      \x0d\x0a  12       local    12       12      \x0d\x0a  13       local    13       13      \x0d\x0a  14       local    14       14      \x0d\x0a  15       local    15       15      \x0d\x0a  16       local    16       16      \x0d\x0a  17       local    17       17      \x0d\x0a  18       local    18       18      \x0d\x0a  19       local    19       19      \x0d\x0a  20       local    20       20      \x0d\x0a  21       local    21       21      \x0d\x0a  22       local    22       22      \x0d\x0a  23       local    23       23      \x0d\x0a  24       local    24       24      \x0d\x0a  25       local    25       25      \x0d\x0a  26       local    26       26      \x0d\x0a  27       local    27       27      \x0d\x0a  28       local    28       28      \x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H \x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:01-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' LLDP Local Device Information
+
+  Chassis Type : mac-address
+  Chassis Id   : 88 3a 30 1a 20 20
+  System Name  : idf02
+  System Description : HP J9773A 2530-24G-PoEP Switch, revision YA.16.11.00...
+  System Capabilities Supported: bridge
+  System Capabilities Enabled: bridge
+
+  Management Address  :
+     Type: ipv4
+     Address: 172.16.34.76
+
+ LLDP Port Information
+
+  Port     PortType PortId   PortDesc
+  -------- -------- -------- --------
+  1        local    1        1
+  2        local    2        2
+  3        local    3        3
+  4        local    4        4
+  5        local    5        5
+  6        local    6        6
+  7        local    7        7
+  8        local    8        8
+  9        local    9        9
+  10       local    10       10
+  11       local    11       11
+  12       local    12       12
+  13       local    13       13
+  14       local    14       14
+  15       local    15       15
+  16       local    16       16
+  17       local    17       17
+  18       local    18       18
+  19       local    19       19
+  20       local    20       20
+  21       local    21       21
+  22       local    22       22
+  23       local    23       23
+  24       local    24       24
+  25       local    25       25
+  26       local    26       26
+  27       local    27       27
+  28       local    28       28
+ idf02#'
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1339, searchable_len 512, match start/end in searchable buf 505/512, searchable_buf '    local    13       13
+  14       local    14       14
+  15       local    15       15
+  16       local    16       16
+  17       local    17       17
+  18       local    18       18
+  19       local    19       19
+  20       local    20       20
+  21       local    21       21
+  22       local    22       22
+  23       local    23       23
+  24       local    24       24
+  25       local    25       25
+  26       local    26       26
+  27       local    27       27
+  28       local    28       28
+ idf02#'
+[2026-09-02T17:29:01-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '    local    13       13
+  14       local    14       14
+  15       local    15       15
+  16       local    16       16
+  17       local    17       17
+  18       local    18       18
+  19       local    19       19
+  20       local    20       20
+  21       local    21       21
+  22       local    22       22
+  23       local    23       23
+  24       local    24       24
+  25       local    25       25
+  26       local    26       26
+  27       local    27       27
+  28       local    28       28
+ idf02#', match: ' idf02#'
+[2026-09-02T17:29:01-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:01-05:00] [debug] cli.Driver sendInput: input 'show system'
+[2026-09-02T17:29:01-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:01-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:01-05:00] [debug] session.Session sendInput: input 'show system'
+[2026-09-02T17:29:01-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 11, input 'show system'
+[2026-09-02T17:29:01-05:00] [debug] session.Session write requested, buf: 'show system'
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:01-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:01-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171052837126228, search depth: 512
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow syste\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hm\x1b[24;18H\x1b[?25h\x1b[24;19H'
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' idf02# show system'
+[2026-09-02T17:29:02-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 19, searchable_len 12, match start/end in searchable buf 1/12, searchable_buf ' show system'
+[2026-09-02T17:29:02-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show system', match: 'show system'
+[2026-09-02T17:29:02-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:02-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:02-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171052837126228, search depth: 512
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;19H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0a Status and Counters - General System Information\x0d\x0a\x0d\x0a  System Name        : idf02                                           \x0d\x0a  System Contact     : \x0d\x0a  System Location    : \x0d\x0a\x0d\x0a  MAC Age Time (sec) : 300    \x0d\x0a\x0d\x0a  Time Zone          : 0    \x0d\x0a  Daylight Time Rule : None                      \x0d\x0a\x0d\x0a  Software revision  : YA.16.11.0026        Base MAC Addr      : 883a30-1a2020\x0d\x0a  ROM Version        : YA.15.20             Serial Number      : CN01FP47X1  \x0d\x0a\x0d\x0a  Up Time            : 19 hours             Memory   - Total   : 67,108,864  \x0d\x0a  CPU Util (%)       : 12                              Free    : 37,836,892  \x0d\x0a\x0d\x0a  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022        \x0d\x0a             Pkts Tx : 1797                 Buffers    Free    : 2899        \x0d\x0a                                                       Lowest  : 2875        \x0d\x0a                                                       Missed  : 0           \x0d\x0a\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:02-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: ' Status and Counters - General System Information
+
+  System Name        : idf02
+  System Contact     :
+  System Location    :
+
+  MAC Age Time (sec) : 300
+
+  Time Zone          : 0
+  Daylight Time Rule : None
+
+  Software revision  : YA.16.11.0026        Base MAC Addr      : 883a30-1a2020
+  ROM Version        : YA.15.20             Serial Number      : CN01FP47X1
+
+  Up Time            : 19 hours             Memory   - Total   : 67,108,864
+  CPU Util (%)       : 12                              Free    : 37,836,892
+
+  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022
+             Pkts Tx : 1797                 Buffers    Free    : 2899
+                                                       Lowest  : 2875
+                                                       Missed  : 0
+
+idf02#'
+[2026-09-02T17:29:02-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 802, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf 'ROM Version        : YA.15.20             Serial Number      : CN01FP47X1
+
+  Up Time            : 19 hours             Memory   - Total   : 67,108,864
+  CPU Util (%)       : 12                              Free    : 37,836,892
+
+  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022
+             Pkts Tx : 1797                 Buffers    Free    : 2899
+                                                       Lowest  : 2875
+                                                       Missed  : 0
+
+idf02#'
+[2026-09-02T17:29:02-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'ROM Version        : YA.15.20             Serial Number      : CN01FP47X1
+
+  Up Time            : 19 hours             Memory   - Total   : 67,108,864
+  CPU Util (%)       : 12                              Free    : 37,836,892
+
+  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022
+             Pkts Tx : 1797                 Buffers    Free    : 2899
+                                                       Lowest  : 2875
+                                                       Missed  : 0
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:29:02-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:02-05:00] [debug] cli.Driver sendInput: input 'show time'
+[2026-09-02T17:29:02-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:02-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:02-05:00] [debug] session.Session sendInput: input 'show time'
+[2026-09-02T17:29:02-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 9, input 'show time'
+[2026-09-02T17:29:02-05:00] [debug] session.Session write requested, buf: 'show time'
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:02-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171053633589168, search depth: 512
+[2026-09-02T17:29:02-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:02-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow time\x1b[24;8H\x1b[?25h\x1b[24;17H'
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show time'
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 16, searchable_len 10, match start/end in searchable buf 1/10, searchable_buf ' show time'
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show time', match: 'show time'
+[2026-09-02T17:29:03-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171053633589168, search depth: 512
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;17H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1HWed Sep  2 22:29:02 2026\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Wed Sep  2 22:29:02 2026
+idf02#'
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 31, searchable_len 31, match start/end in searchable buf 25/31, searchable_buf 'Wed Sep  2 22:29:02 2026
+idf02#'
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'Wed Sep  2 22:29:02 2026
+idf02#', match: 'idf02#'
+[2026-09-02T17:29:03-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:03-05:00] [debug] cli.Driver sendInput: input 'show running-config'
+[2026-09-02T17:29:03-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:03-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session sendInput: input 'show running-config'
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 19, input 'show running-config'
+[2026-09-02T17:29:03-05:00] [debug] session.Session write requested, buf: 'show running-config'
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171054384988199, search depth: 512
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hshow runni\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hng-config\x1b[24;18H\x1b[?25h\x1b[24;27H'
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# show running-config'
+[2026-09-02T17:29:03-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 26, searchable_len 20, match start/end in searchable buf 1/20, searchable_buf ' show running-config'
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' show running-config', match: 'show running-config'
+[2026-09-02T17:29:03-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:03-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171054384988199, search depth: 512
+[2026-09-02T17:29:03-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:03-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;27H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x0d\x0aRunning configuration:\x0d\x0a\x0d\x0a'
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+'
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 24, searchable_len 24, match start/end in searchable buf 0/0, searchable_buf 'Running configuration:
+
+'
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:502: session.Session readLoop: raw read '; J9773A Configuration Editor; Created on release #YA.16.11.0026\x0d\x0a; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05\x0d\x0ahostname "idf02"\x0d\x0ano telnet-server\x0d\x0ano web-management\x0d\x0aweb-management ssl\x0d\x0aip route 0.0.0.0 0.0.0.0 172.16.34.1\x0d\x0ainterface 24\x0d\x0a   name "OPTIMUX-TIE"\x0d\x0a   exit\x0d\x0asnmp-server community "public"\x0d\x0avlan 1\x0d\x0a   name "DEFAULT_VLAN"\x0d\x0a   no untagged 1-23\x0d\x0a   untagged 24-28\x0d\x0a   ip address dhcp-bootp\x0d\x0a   exit\x0d\x0avlan 10\x0d\x0a   name "LAN"\x0d\x0a   untagged 1-23\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 15\x0d\x0a   name "TRUST"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 20\x0d\x0a   name "WAN"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 25\x0d\x0a   name "MEDIA"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 30\x0d\x0a   name "MGMT"\x0d\x0a   tagged 24-28\x0d\x0a   ip address dhcp-bootp\x0d\x0a   exit\x0d\x0a\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1Hvlan 500\x0d\x0a   name "VLAN500"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 501\x0d\x0a   name "VLAN501"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 502\x0d\x0a   name "VLAN502"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 503\x0d\x0a   name "VLAN503"\x0d\x0a   tagged 24-28\x0d\x0a   no ip address\x0d\x0a   exit\x0d\x0avlan 504\x0d\x0a   name "VLAN504"\x0d\x0a   tagged 24-28\x0d\x0a'
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+'
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1105, searchable_len 512, match start/end in searchable buf 0/0, searchable_buf 'n 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+'
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[1;24r\x1b[24;1H   no ip address\x0d\x0a   exit\x0d\x0amanagement-vlan 30\x0d\x0apassword manager\x0d\x0a\x0d\x0a\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#'
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 1173, searchable_len 512, match start/end in searchable buf 506/512, searchable_buf '   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#'
+[2026-09-02T17:29:04-05:00] [debug] session.Session readTimeout: found check match in searchable buffer '   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+idf02#', match: 'idf02#'
+[2026-09-02T17:29:04-05:00] [info] cli.Driver sendInput requested
+[2026-09-02T17:29:04-05:00] [debug] cli.Driver sendInput: input 'write memory'
+[2026-09-02T17:29:04-05:00] [debug] cli.Driver creating new Result object for operation send_input
+[2026-09-02T17:29:04-05:00] [info] session.Session sendInput requested
+[2026-09-02T17:29:04-05:00] [debug] session.Session sendInput: input 'write memory'
+[2026-09-02T17:29:04-05:00] [trace] session.zig:1178: session.Session innerSendInput: input_handling 'fuzzy', input_len 12, input 'write memory'
+[2026-09-02T17:29:04-05:00] [debug] session.Session write requested, buf: 'write memory'
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:04-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171055692435588, search depth: 512
+[2026-09-02T17:29:04-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:04-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[24;8Hwrite memo\x1b[24;8H\x1b[?25h\x1b[24;18H\x1b[24;18Hry\x1b[24;18H\x1b[?25h\x1b[24;20H'
+[2026-09-02T17:29:05-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02# write memory'
+[2026-09-02T17:29:05-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 19, searchable_len 13, match start/end in searchable buf 1/13, searchable_buf ' write memory'
+[2026-09-02T17:29:05-05:00] [debug] session.Session readTimeout: found check match in searchable buffer ' write memory', match: 'write memory'
+[2026-09-02T17:29:05-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:05-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:05-05:00] [debug] session.Session readTimeout requested. start timestamp ms: 10171055692435588, search depth: 512
+[2026-09-02T17:29:05-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] session.zig:502: session.Session readLoop: raw read '\x1b[1;0H\x1b[1M\x1b[24;1H\x1b[1L\x1b[24;20H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[1;24r\x1b[24;1H\x1b[24;1H\x1b[2K\x1b[24;1H\x1b[?25h\x1b[24;1H\x1b[24;1Hidf02# \x1b[24;1H\x1b[24;8H\x1b[24;1H\x1b[?25h\x1b[24;8H'
+[2026-09-02T17:29:05-05:00] [trace] ssh2.Transport read requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport readStandard requested
+[2026-09-02T17:29:05-05:00] [trace] session.zig:1002: session.Session readTimeout: processed read: 'idf02#'
+[2026-09-02T17:29:05-05:00] [trace] session.zig:1016: session.Session readTimeout: processed_len 6, searchable_len 6, match start/end in searchable buf 0/6, searchable_buf 'idf02#'
+[2026-09-02T17:29:05-05:00] [debug] session.Session readTimeout: found check match in searchable buffer 'idf02#', match: 'idf02#'
+[2026-09-02T17:29:05-05:00] [info] cli.Driver close requested
+[2026-09-02T17:29:05-05:00] [debug] cli.Driver creating new Result object for operation close
+[2026-09-02T17:29:05-05:00] [info] cli.Driver close: on close callback set, executing...
+[2026-09-02T17:29:05-05:00] [debug] cli.Driver creating new Result object for operation on_close
+[2026-09-02T17:29:05-05:00] [debug] session.Session write requested, buf: 'exit'
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:05-05:00] [debug] session.Session writeReturn requested
+[2026-09-02T17:29:05-05:00] [debug] session.Session write requested, buf: '\x0a'
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport write requested
+[2026-09-02T17:29:05-05:00] [debug] ssh2.Transport writeStandard requested
+[2026-09-02T17:29:05-05:00] [info] session.Session close requested
+[2026-09-02T17:29:05-05:00] [info] ssh2.Transport close requested
+[2026-09-02T17:29:05-05:00] [debug] eagain too many times closing ssh2 channel
+[2026-09-02T17:29:05-05:00] [debug] eagain too many times freeing ssh2 channel
+[2026-09-02T17:29:05-05:00] [debug] eagain too many times freeing ssh2 session

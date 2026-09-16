@@ -1,0 +1,13 @@
+=== unknown_command ===
+Invalid input: badcommand123
+=== incomplete_command ===
+Incomplete input: show
+=== bad_interface ===
+Module not present for port or invalid port: bogus0/0
+=== config_unknown_command ===
+Invalid input: badcommand123
+=== config_bad_parameter ===
+String xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32
+ characters.
+=== config_unknown_interface ===
+Module not present for port or invalid port: bogus0/0

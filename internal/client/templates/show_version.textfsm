@@ -1,0 +1,23 @@
+Value build_date (.*)
+Value version (.*)
+Value boot_image (.*)
+Value rom_version (.*)
+
+# Parse the output of "show version" on an HP AOS-S switch.
+#
+# The output is a single logical record with fields scattered across lines:
+# the build date, the software version, the boot image name, and the boot
+# ROM version. The "Image stamp:" path line and the trailing numeric build
+# counter line carry no fields we care about and are ignored.
+#
+# gotextfsm (v1.1.0, sirikothe port) matches on the named capture groups in
+# the RULE regex, so every field is written inline as (?P<name>...). The
+# Value lines are present to register the field names and must stay free of
+# (?P groups so the emitted values are plain scalars.
+
+
+Start
+  ^\s+(?P<build_date>[A-Z][a-z]{2} \d{1,2} \d{4} \d{2}:\d{2}:\d{2})\s*$ -> Continue
+  ^\s+(?P<version>YA\.[\d.]+)\s*$ -> Continue
+  ^Boot Image:\s+(?P<boot_image>\S+)\s*$ -> Continue
+  ^Boot ROM Version:\s+(?P<rom_version>YA\.[\d.]+)\s*$ -> Record

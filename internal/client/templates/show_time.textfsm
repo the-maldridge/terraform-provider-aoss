@@ -1,0 +1,15 @@
+Value day_of_week (.*)
+Value month (.*)
+Value day (.*)
+Value time (.*)
+Value year (.*)
+
+# Parse the output of "show time" on an HP AOS-S switch.
+#
+# A single line such as "Wed Sep  2 22:29:02 2026" (note the double space
+# before single-digit days because the day field is right-aligned to two
+# columns). \s+ absorbs the variable spacing.
+
+
+Start
+  ^\s*(?P<day_of_week>\w{3})\s+(?P<month>\w{3})\s+(?P<day>\d{1,2})\s+(?P<time>\d{2}:\d{2}:\d{2})\s+(?P<year>\d{4})\s*$ -> Record

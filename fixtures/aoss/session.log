@@ -1,0 +1,433 @@
+=== collection started ===
+host=172.16.34.76 port=22 user=admin transport=ssh2
+definition=builtin:generic
+---- section: version ----
+> show version
+Image stamp:
+ /ws/swbuildm/rel_beluru_qaoff/code/build/lakes(swbuildm_rel_beluru_qaoff_rel_be
+luru)
+                Jun 17 2025 02:34:30
+                YA.16.11.0026
+                444
+Boot Image:     Primary
+
+Boot ROM Version:    YA.15.20
+
+---- section: modes ----
+[entered mode privileged_exec]
+
+[entered mode configuration]
+idf02#
+idf02# config terminalidf02(config)#
+[entered mode privileged_exec]
+idf02(config)#
+idf02(config)# endidf02#
+---- section: config_sessions ----
+[entered mode configuration]
+idf02#
+idf02# config terminalidf02(config)#
+#(config) vlan 1
+
+
+#(config) exit
+
+
+#(config) interface 1
+
+
+#(config) exit
+
+
+[entered mode privileged_exec]
+idf02(config)#
+idf02(config)# endidf02#
+---- section: error_strings ----
+> show badcommand123
+Invalid input: badcommand123 [failure-indicator-seen]
+
+> show
+Incomplete input: show [failure-indicator-seen]
+
+> show interfaces bogus0/0
+Module not present for port or invalid port: bogus0/0 [failure-indicator-seen]
+
+[entered mode configuration]
+idf02#
+idf02# config terminalidf02(config)#
+#(config) badcommand123
+Invalid input: badcommand123 [failure-indicator-seen]
+
+#(config) vlan 1 name xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+String xxxxxxxxxxxxxxxxxxxxxxxxxxxxx... too long. Allowed length is 32
+ characters. [failure-indicator-seen]
+
+#(config) interface bogus0/0
+Module not present for port or invalid port: bogus0/0 [failure-indicator-seen]
+
+[entered mode privileged_exec]
+idf02(config)#
+idf02(config)# endidf02#
+---- section: running_config ----
+> show running-config
+Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+---- section: shows ----
+> show vlan
+ Status and Counters - VLAN Information
+
+  Maximum VLANs to support : 256
+  Primary VLAN : DEFAULT_VLAN
+  Management VLAN : MGMT
+
+  VLAN ID Name                             | Status     Voice Jumbo
+  ------- -------------------------------- + ---------- ----- -----
+  1       DEFAULT_VLAN                     | Port-based No    No
+  10      LAN                              | Port-based No    No
+  15      TRUST                            | Port-based No    No
+  20      WAN                              | Port-based No    No
+  25      MEDIA                            | Port-based No    No
+  30      MGMT                             | Port-based No    No
+  500     VLAN500                          | Port-based No    No
+  501     VLAN501                          | Port-based No    No
+  502     VLAN502                          | Port-based No    No
+  503     VLAN503                          | Port-based No    No
+  504     VLAN504                          | Port-based No    No
+
+> show vlan 1
+ Status and Counters - VLAN Information - VLAN 1
+
+  VLAN ID : 1
+  Name : DEFAULT_VLAN
+  Status : Port-based
+  Voice : No
+  Jumbo : No
+
+  Port Information Mode     Unknown VLAN Status
+  ---------------- -------- ------------ ----------
+  24               Untagged Learn        Up
+  25               Untagged Learn        Down
+  26               Untagged Learn        Down
+  27               Untagged Learn        Down
+  28               Untagged Learn        Down
+
+  Overridden Port VLAN configuration
+
+  Port  Mode
+  ----- ------------
+
+> show interfaces
+ Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+  1          0              0              0            0            off
+  2          0              0              0            0            off
+  3          0              0              0            0            off
+  4          0              0              0            0            off
+  5          0              0              0            0            off
+  6          0              0              0            0            off
+  7          0              0              0            0            off
+  8          0              0              0            0            off
+  9          0              0              0            0            off
+  10         0              0              0            0            off
+  11         0              0              0            0            off
+  12         0              0              0            0            off
+  13         0              0              0            0            off
+  14         0              0              0            0            off
+  15         0              0              0            0            off
+  16         0              0              0            0            off
+  17         0              0              0            0            off
+  18         0              0              0            0            off
+  19         0              0              0            0            off
+  20         0              0              0            0            off
+  21         0              0              0            0            off
+  22         0              0              0            0            off
+  23         0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+  25         0              0              0            0            off
+  26         0              0              0            0            off
+  27         0              0              0            0            off
+  28         0              0              0            0            off
+
+> show interface 1
+ Status and Counters - Port Counters for port 1
+
+  Name  :
+  MAC Address      : 883a30-1a203f
+  Link Status      : Down
+  Port Enabled     : Yes
+  Totals (Since boot or last clear) :
+   Bytes Rx        : 0                    Bytes Tx        : 0
+   Unicast Rx      : 0                    Unicast Tx      : 0
+   Bcast/Mcast Rx  : 0                    Bcast/Mcast Tx  : 0
+  Errors (Since boot or last clear) :
+   FCS Rx          : 0                    Drops Tx        : 0
+   Alignment Rx    : 0                    Collisions Tx   : 0
+   Runts Rx        : 0                    Late Colln Tx   : 0
+   Giants Rx       : 0                    Excessive Colln : 0
+   Total Rx Errors : 0                    Deferred Tx     : 0
+  Others (Since boot or last clear) :
+   Discard Rx      : 0                    Out Queue Len   : 0
+   Unknown Protos  : 0
+  Rates (5 minute weighted average) :
+   Total Rx (bps) : 0                     Total Tx (bps) : 0
+   Unicast Rx (Pkts/sec) : 0              Unicast Tx (Pkts/sec) : 0
+   B/Mcast Rx (Pkts/sec) : 0              B/Mcast Tx (Pkts/sec) : 0
+   Utilization Rx  :     0 %		  Utilization Tx  :     0 %
+
+> show ip route
+                                IP Route Entries
+
+  Destination        Gateway         VLAN Type      Sub-Type   Metric     Dist.
+  ------------------ --------------- ---- --------- ---------- ---------- -----
+  0.0.0.0/0          172.16.34.1     30   static               1          1
+  127.0.0.0/8        reject               static               0          0
+  127.0.0.1/32                            connected            1          0
+  172.16.34.0/24     MGMT            30   connected            1          0
+
+> show arp
+ IP ARP table
+
+  IP Address       MAC Address       Type    Port
+  ---------------  ----------------- ------- ----
+  172.16.34.1      f41e57-36fd7c     dynamic 24
+
+> show lldp info remote-device
+ LLDP Remote Devices Information
+
+  LocalPort | ChassisId          PortId             PortDescr SysName
+  --------- + ------------------ ------------------ --------- ------------------
+  24        | 38 32 7a 16 fe 18  ether1             br0/et... optimux1
+  24        | edge0              br0/sfp-sfpplus3             MikroTik
+  24        | edge0              mgmt0                        MikroTik
+  24        | edge0              lan0                         MikroTik
+  24        | edge0              wan0                         MikroTik
+  24        | edge0              trust0                       MikroTik
+  24        | edge0              media0                       MikroTik
+  24        | optimux1           br0/ether1                   MikroTik
+  24        | optimux1           mgmt0                        MikroTik
+
+> show lldp info local-device
+ LLDP Local Device Information
+
+  Chassis Type : mac-address
+  Chassis Id   : 88 3a 30 1a 20 20
+  System Name  : idf02
+  System Description : HP J9773A 2530-24G-PoEP Switch, revision YA.16.11.00...
+  System Capabilities Supported: bridge
+  System Capabilities Enabled: bridge
+
+  Management Address  :
+     Type: ipv4
+     Address: 172.16.34.76
+
+ LLDP Port Information
+
+  Port     PortType PortId   PortDesc
+  -------- -------- -------- --------
+  1        local    1        1
+  2        local    2        2
+  3        local    3        3
+  4        local    4        4
+  5        local    5        5
+  6        local    6        6
+  7        local    7        7
+  8        local    8        8
+  9        local    9        9
+  10       local    10       10
+  11       local    11       11
+  12       local    12       12
+  13       local    13       13
+  14       local    14       14
+  15       local    15       15
+  16       local    16       16
+  17       local    17       17
+  18       local    18       18
+  19       local    19       19
+  20       local    20       20
+  21       local    21       21
+  22       local    22       22
+  23       local    23       23
+  24       local    24       24
+  25       local    25       25
+  26       local    26       26
+  27       local    27       27
+  28       local    28       28
+
+> show system
+ Status and Counters - General System Information
+
+  System Name        : idf02
+  System Contact     :
+  System Location    :
+
+  MAC Age Time (sec) : 300
+
+  Time Zone          : 0
+  Daylight Time Rule : None
+
+  Software revision  : YA.16.11.0026        Base MAC Addr      : 883a30-1a2020
+  ROM Version        : YA.15.20             Serial Number      : CN01FP47X1
+
+  Up Time            : 19 hours             Memory   - Total   : 67,108,864
+  CPU Util (%)       : 12                              Free    : 37,836,892
+
+  IP Mgmt  - Pkts Rx : 9290                 Packet   - Total   : 3022
+             Pkts Tx : 1797                 Buffers    Free    : 2899
+                                                       Lowest  : 2875
+                                                       Missed  : 0
+
+> show time
+Wed Sep  2 22:29:02 2026
+
+> show running-config
+Running configuration:
+
+; J9773A Configuration Editor; Created on release #YA.16.11.0026
+; Ver #14:41.44.00.04.19.02.13.98.82.34.61.18.28.f3.84.9c.63.ff.37.27:05
+hostname "idf02"
+no telnet-server
+no web-management
+web-management ssl
+ip route 0.0.0.0 0.0.0.0 172.16.34.1
+interface 24
+   name "OPTIMUX-TIE"
+   exit
+snmp-server community "public"
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-23
+   untagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 10
+   name "LAN"
+   untagged 1-23
+   tagged 24-28
+   no ip address
+   exit
+vlan 15
+   name "TRUST"
+   tagged 24-28
+   no ip address
+   exit
+vlan 20
+   name "WAN"
+   tagged 24-28
+   no ip address
+   exit
+vlan 25
+   name "MEDIA"
+   tagged 24-28
+   no ip address
+   exit
+vlan 30
+   name "MGMT"
+   tagged 24-28
+   ip address dhcp-bootp
+   exit
+vlan 500
+   name "VLAN500"
+   tagged 24-28
+   no ip address
+   exit
+vlan 501
+   name "VLAN501"
+   tagged 24-28
+   no ip address
+   exit
+vlan 502
+   name "VLAN502"
+   tagged 24-28
+   no ip address
+   exit
+vlan 503
+   name "VLAN503"
+   tagged 24-28
+   no ip address
+   exit
+vlan 504
+   name "VLAN504"
+   tagged 24-28
+   no ip address
+   exit
+management-vlan 30
+password manager
+
+---- section: config_restored ----
+> write memory
+
+
+=== collection finished ===

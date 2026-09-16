@@ -1,0 +1,24 @@
+Value system_name (.*)
+Value software_revision (.*)
+Value base_mac (.*)
+Value rom_version (.*)
+Value serial (.*)
+Value uptime (.*)
+Value mem_total (.*)
+Value mem_free (.*)
+Value cpu_util (.*)
+
+# Parse the output of "show system" on an HP AOS-S switch.
+#
+# A single logical record. Several lines carry two fields at once (software
+# revision + base MAC, ROM version + serial, uptime + memory total, CPU +
+# memory free), so those rules capture both named groups on one line. All
+# rules advance with Continue and the last field line records.
+
+
+Start
+  ^\s+System Name\s+:\s+(?P<system_name>\S+)\s*$ -> Continue
+  ^\s+Software revision\s+:\s+(?P<software_revision>\S+)\s+Base MAC Addr\s+:\s+(?P<base_mac>[\w-]+)\s*$ -> Continue
+  ^\s+ROM Version\s+:\s+(?P<rom_version>\S+)\s+Serial Number\s+:\s+(?P<serial>\S+)\s*$ -> Continue
+  ^\s+Up Time\s+:\s+(?P<uptime>\d+ \w+)\s+Memory.*Total\s+:\s+(?P<mem_total>[\d,]+)\s*$ -> Continue
+  ^\s+CPU Util \(%\)\s+:\s+(?P<cpu_util>\d+)\s+.*Free\s+:\s+(?P<mem_free>[\d,]+)\s*$ -> Record

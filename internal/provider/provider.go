@@ -24,30 +24,34 @@ func New(version string) func() *schema.Provider {
 					Type:        schema.TypeString,
 					Required:    true,
 					Description: "The hostname or IP address of the switch to configure.",
-					DefaultFunc: schema.EnvDefaultFunc("HP2350_HOST", nil),
+					DefaultFunc: schema.EnvDefaultFunc("AOSS_HOST", nil),
 				},
 				"username": {
 					Type:        schema.TypeString,
 					Required:    true,
 					Description: "The username used to authenticate to the switch.",
-					DefaultFunc: schema.EnvDefaultFunc("HP2350_USERNAME", nil),
+					DefaultFunc: schema.EnvDefaultFunc("AOSS_USERNAME", nil),
 				},
 				"password": {
 					Type:        schema.TypeString,
 					Required:    true,
 					Sensitive:   true,
 					Description: "The password used to authenticate to the switch.",
-					DefaultFunc: schema.EnvDefaultFunc("HP2350_PASSWORD", nil),
+					DefaultFunc: schema.EnvDefaultFunc("AOSS_PASSWORD", nil),
 				},
 			},
-			ResourcesMap:         map[string]*schema.Resource{},
-			DataSourcesMap:       map[string]*schema.Resource{},
+			ResourcesMap: map[string]*schema.Resource{
+				"aoss_hostname": aossHostnameResource(),
+			},
+			DataSourcesMap: map[string]*schema.Resource{
+				"aoss_version": aossVersionDataSource(),
+			},
 			ConfigureContextFunc: providerConfigure,
 		}
 	}
 }
 
-func providerConfigure(_ context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
+func providerConfigure(_ context.Context, d *schema.ResourceData) (any, diag.Diagnostics) {
 	cfg := &Config{
 		Host:     d.Get("host").(string),
 		Username: d.Get("username").(string),
@@ -62,11 +66,11 @@ func providerConfigure(_ context.Context, d *schema.ResourceData) (interface{}, 
 func (c *Config) validate() error {
 	switch {
 	case c.Host == "":
-		return fmt.Errorf("host must be set in the provider configuration or via the HP2350_HOST environment variable")
+		return fmt.Errorf("host must be set in the provider configuration or via the AOSS_HOST environment variable")
 	case c.Username == "":
-		return fmt.Errorf("username must be set in the provider configuration or via the HP2350_USERNAME environment variable")
+		return fmt.Errorf("username must be set in the provider configuration or via the AOSS_USERNAME environment variable")
 	case c.Password == "":
-		return fmt.Errorf("password must be set in the provider configuration or via the HP2350_PASSWORD environment variable")
+		return fmt.Errorf("password must be set in the provider configuration or via the AOSS_PASSWORD environment variable")
 	}
 	return nil
 }

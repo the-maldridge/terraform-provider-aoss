@@ -1,0 +1,14 @@
+Value ip (.*)
+Value mac (.*)
+Value type (.*)
+Value port (.*)
+
+# Parse the output of "show arp" on an HP AOS-S switch.
+#
+# Each data line looks like:
+#   "  172.16.34.1      f41e57-36fd7c     dynamic 24"
+# One record per line.
+
+
+Start
+  ^\s+(?P<ip>\d+\.\d+\.\d+\.\d+)\s+(?P<mac>[\w-]+)\s+(?P<type>[\w-]+)\s+(?P<port>\d+)\s*$ -> Record
