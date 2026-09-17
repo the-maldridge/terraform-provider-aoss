@@ -184,3 +184,75 @@ func TestFixtureReplay(t *testing.T) {
 		t.Fatalf("SendInput(write memory): %v", err)
 	}
 }
+
+// TestSendConfigMultiLine drives the fixed multi-line config path. It
+// replays the fixture's prefix exactly as TestFixtureReplay does (so the
+// stream is aligned at the same point), then issues the whole
+// config_sessions block through a single SendConfig call instead of four
+// separate SendInputs. SendConfig splits the block and sends each line as
+// its own input read back to the prompt it elicits, so the per-line stream
+// consumption is identical to the sequence TestFixtureReplay already
+// proves. If SendConfig regresses to a single multi-line SendInput, the
+// read strands on a prompt that never arrives and the operation times out.
+func TestSendConfigMultiLine(t *testing.T) {
+	cl, err := NewFromFixture(fixturePath)
+	if err != nil {
+		t.Fatalf("NewFromFixture: %v", err)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+	defer cancel()
+	if err := cl.Open(ctx); err != nil {
+		t.Fatalf("Open: %v", err)
+	}
+	defer func() {
+		if err := cl.Close(ctx); err != nil {
+			t.Fatalf("Close: %v", err)
+		}
+	}()
+
+	prompt := func(want string) {
+		t.Helper()
+		res, err := cl.GetPrompt(ctx)
+		if err != nil {
+			t.Fatalf("GetPrompt: %v", err)
+		}
+		if got := strings.TrimSpace(res.Result()); got != want {
+			t.Fatalf("GetPrompt = %q, want %q", got, want)
+		}
+	}
+
+	// Mirror TestFixtureReplay's version + modes sections verbatim so the
+	// replayed stream is at the identical position when the config block
+	// is sent.
+	if out, err := cl.Show(ctx, "show version"); err != nil || !strings.Contains(out, "YA.16.11.0026") {
+		t.Fatalf("show version = %q, err %v; expected YA.16.11.0026", out, err)
+	}
+	if _, err := cl.EnterMode(ctx, "privileged_exec"); err != nil {
+		t.Fatalf("EnterMode(privileged_exec): %v", err)
+	}
+	prompt("idf02#")
+	if _, err := cl.EnterMode(ctx, "configuration"); err != nil {
+		t.Fatalf("EnterMode(configuration): %v", err)
+	}
+	prompt("idf02(config)#")
+	if _, err := cl.EnterMode(ctx, "privileged_exec"); err != nil {
+		t.Fatalf("EnterMode(privileged_exec): %v", err)
+	}
+
+	// The config_sessions block through a single multi-line SendConfig
+	// call: it enters configuration mode, sends each line to its own
+	// prompt, and returns to privileged exec.
+	if _, err := cl.SendConfig(ctx, "vlan 1\nexit\ninterface 1\nexit"); err != nil {
+		t.Fatalf("SendConfig(multi-line): %v", err)
+	}
+
+	// The session must be back in privileged exec and aligned with the
+	// stream: the next recorded command is the error_strings probe.
+	res, err := cl.SendInput(ctx, "show badcommand123")
+	if err == nil {
+		t.Fatalf("SendInput(show badcommand123): expected a device-reported failure, got none")
+	}
+	if res == nil || !strings.Contains(res.Result(), "Invalid input: badcommand123") {
+		t.Fatalf("SendInput(show badcommand123) = %v, want it to contain %q", res, "Invalid input: badcommand123")
+	}
+}

@@ -33,6 +33,24 @@ resource "aoss_hostname" "this" {
 }
 ```
 
+### `aoss_vlan`
+
+Manages a VLAN and its member ports and trunk circuits. `tagged` and
+`untagged` are sets of member references, each either a port number or a
+trunk circuit name of the form `Trk<N>` (the `trk` prefix is matched
+case-insensitively; state is stored in the canonical `Trk<N>` spelling).
+`dhcp` (default `false`) controls whether the VLAN interface obtains its IP
+address via DHCP.
+
+```hcl
+resource "aoss_vlan" "lan" {
+  vlan_id  = 10
+  name     = "LAN"
+  untagged = [for i in range(1, 24) : tostring(i)]
+  tagged   = ["24", "25", "26", "27", "28", "Trk1"]
+}
+```
+
 ## Data sources
 
 ### `aoss_version`

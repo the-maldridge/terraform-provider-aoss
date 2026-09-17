@@ -1,6 +1,8 @@
 package client
 
 import (
+	"time"
+
 	"github.com/scrapli/scrapligo/v2/options"
 )
 
@@ -70,6 +72,7 @@ func (c *ClientConfig) DefaultOptions() ([]options.Option, error) {
 		options.WithUsername(c.Username),
 		options.WithPassword(c.Password),
 		options.WithDefinitionContent(DefinitionPlatform, definitionContent),
+		options.WithOperationTimeout(30 * time.Second),
 	}
 	if c.UsernamePattern != "" {
 		opts = append(opts, options.WithUsernamePattern(c.UsernamePattern))

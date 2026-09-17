@@ -144,24 +144,117 @@ func (cl *Client) SendInput(ctx context.Context, input string, opts ...scraplicl
 	return res, nil
 }
 
+// aossConfigPromptPattern is a non-anchored variant of the configuration
+// mode prompt pattern from the platform definition, for use as a
+// substring ("contains") match against ReadWithCallbacks output windows.
+// The definition's pattern is anchored ^...$ for full-buffer prompt
+// detection and would not match inside a multi-line window.
+const aossConfigPromptPattern = `[\w.\-@/: ]{1,63}\([\w.\-@/:]{1,63}\)[>#$]`
+
 // SendConfig transitions to configuration mode, sends input, and returns
 // to privileged exec. It is the unit of every Terraform resource
 // mutation.
+//
+// input may span multiple lines: each line is sent as its own input and
+// read back to the prompt it elicits. AOS-S processes configuration
+// commands one at a time and prints a new prompt after each, so sending a
+// whole block in a single SendInput strands the read on a prompt that
+// never arrives and the operation hangs until its context expires.
 func (cl *Client) SendConfig(ctx context.Context, input string) (*scraplicli.Result, error) {
-	if _, err := cl.c.EnterMode(ctx, "configuration"); err != nil {
+	if _, err := cl.EnterMode(ctx, "configuration"); err != nil {
 		return nil, fmt.Errorf("aoss: entering configuration mode: %w", err)
 	}
+	// Returning to privileged exec is best-effort: the config has already
+	// been accepted, so a failure here must not mask a successful mutation.
 	defer func() {
-		_, _ = cl.c.EnterMode(ctx, "privileged_exec")
+		_, _ = cl.EnterMode(ctx, "privileged_exec")
 	}()
-	res, err := cl.c.SendInput(ctx, input, scraplicli.WithRequestedMode("configuration"))
-	if err != nil {
-		return nil, fmt.Errorf("aoss: sending config input %q: %w", input, err)
+	lines := make([]string, 0, strings.Count(input, "\n")+1)
+	for _, line := range strings.Split(input, "\n") {
+		if strings.TrimSpace(line) != "" {
+			lines = append(lines, line)
+		}
 	}
-	if res.Failed() {
-		return res, fmt.Errorf("aoss: device rejected config input %q: %s", input, strings.TrimSpace(res.Result()))
+	if len(lines) == 0 {
+		return nil, fmt.Errorf("aoss: sending config input: empty input")
+	}
+	var res *scraplicli.Result
+	for _, line := range lines {
+		var err error
+		res, err = cl.SendInput(ctx, line, scraplicli.WithRequestedMode("configuration"))
+		if err != nil {
+			return res, fmt.Errorf("aoss: sending config input %q: %w", line, err)
+		}
 	}
 	return res, nil
+}
+
+// RemoveVLAN deletes a VLAN in configuration mode.
+//
+// "no vlan <id>" is conditionally interactive: when deleting the VLAN
+// would move at least one port to the default VLAN (a port's only
+// untagged home is removed), AOS-S prints
+// "The following ports will be moved to the default VLAN: ..." and waits
+// at a "[y/n]" prompt. A plain SendInput cannot see that prompt, so the
+// read runs to the operation timeout and the VLAN is never removed.
+// confirm reports whether the confirmation may appear (see
+// NeedsVLANDeleteConfirm); when it may, the command is driven with
+// ReadWithCallbacks: one callback answers "Y" the moment "[y/n]"
+// appears (once, and only if it appears, so a device that skips the
+// confirmation is never answered), and a completing callback ends the
+// read the moment the configuration prompt returns - either the
+// confirmation was accepted, or no confirmation was needed at all.
+// When confirm is false, a plain SendInput is used.
+//
+// This cannot use scrapligo's SendPromptedInput: libscrapli
+// 0.0.1-rc.33 (pinned by scrapligo v2.0.0-rc.18) panics with "attempt to
+// use null value" in sendPromptedInput whenever a non-empty prompt
+// pattern is supplied, because it reuses the confirmation read's check
+// arguments (pattern left null) for the trailing prompt read.
+//
+// A device-reported failure indicator in the response (for example a
+// rejected answer in a race) is not surfaced as an error; the caller
+// verifies the running config afterwards and is the authority.
+func (cl *Client) RemoveVLAN(ctx context.Context, id int, confirm bool) error {
+	if _, err := cl.EnterMode(ctx, "configuration"); err != nil {
+		return fmt.Errorf("aoss: entering configuration mode: %w", err)
+	}
+	// Returning to privileged exec is best-effort: the delete has already
+	// been accepted, so a failure here must not mask it.
+	defer func() {
+		_, _ = cl.EnterMode(ctx, "privileged_exec")
+	}()
+	cmd := fmt.Sprintf("no vlan %d", id)
+	if !confirm {
+		_, err := cl.SendInput(ctx, cmd, scraplicli.WithRequestedMode("configuration"))
+		return err
+	}
+	// searchDepth lets each callback rescan the most recent output even
+	// after the other fired: ReadWithCallbacks only advances the search
+	// position past the end of the buffer at the moment a callback runs,
+	// so without depth the completing callback would never see the
+	// configuration prompt when "[y/n]" and the prompt arrive in the
+	// same read chunk.
+	_, err := cl.c.ReadWithCallbacks(ctx, cmd,
+		scraplicli.NewReadCallback("confirm",
+			func(ctx context.Context, c *scraplicli.Cli, _, _ string) error {
+				return c.WriteAndReturn("Y")
+			},
+			scraplicli.WithContainsPattern(`(?i)\[y/n\]`),
+			scraplicli.WithOnce(),
+			scraplicli.WithSearchDepth(512),
+		),
+		scraplicli.NewReadCallback("done",
+			func(ctx context.Context, _ *scraplicli.Cli, _, _ string) error { return nil },
+			scraplicli.WithContainsPattern(aossConfigPromptPattern),
+			scraplicli.WithCompletes(),
+			scraplicli.WithSearchDepth(512),
+		),
+	)
+	if err != nil {
+		return fmt.Errorf("aoss: removing vlan %d: %w", id, err)
+	}
+	return nil
 }
 
 // Show runs a "show" command in privileged exec and returns the raw
