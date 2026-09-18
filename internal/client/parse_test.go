@@ -352,8 +352,9 @@ func TestParseRunningConfig(t *testing.T) {
 		t.Fatalf("ParseRunningConfig: %v", err)
 	}
 	want := RunningConfig{
-		Release:  "YA.16.11.0026",
-		Hostname: "idf02",
+		Release:        "YA.16.11.0026",
+		Hostname:       "idf02",
+		ManagementVLAN: "30",
 	}
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("ParseRunningConfig() = %+v, want %+v", got, want)

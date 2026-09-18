@@ -33,6 +33,17 @@ resource "aoss_hostname" "this" {
 }
 ```
 
+### `aoss_management_vlan`
+
+Sets the management VLAN (`management-vlan <id>` in configuration mode).
+`vlan_id` must be between 1 and 4094.
+
+```hcl
+resource "aoss_management_vlan" "this" {
+  vlan_id = 30
+}
+```
+
 ### `aoss_vlan`
 
 Manages a VLAN and its member ports and trunk circuits. `tagged` and

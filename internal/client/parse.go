@@ -147,8 +147,9 @@ type LLDPInfo struct {
 
 // RunningConfig holds the minimal parsed "show running-config" output.
 type RunningConfig struct {
-	Release  string
-	Hostname string
+	Release        string
+	Hostname       string
+	ManagementVLAN string
 }
 
 // runTemplate loads the named embedded TextFSM template, runs the output
@@ -421,7 +422,8 @@ func ParseRunningConfig(output string) (RunningConfig, error) {
 		return RunningConfig{}, err
 	}
 	return RunningConfig{
-		Release:  row["release"],
-		Hostname: row["hostname"],
+		Release:        row["release"],
+		Hostname:       row["hostname"],
+		ManagementVLAN: row["management_vlan"],
 	}, nil
 }

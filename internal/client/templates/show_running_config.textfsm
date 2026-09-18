@@ -1,15 +1,22 @@
 Value release (.*)
 Value hostname (.*)
+Value management_vlan (.*)
 
 # Parse the output of "show running-config" on an HP AOS-S switch.
 #
 # The running config is a nested block structure, not a table, so this
 # template is deliberately minimal: it captures the software release from
-# the header comment line and the device hostname from the hostname
-# statement. Nested blocks (vlan, interface, ip route, management-vlan,
-# password manager) are not parsed here.
+# the header comment line, the device hostname from the hostname
+# statement, and the management VLAN from the management-vlan statement.
+# Nested blocks (vlan, interface, ip route, password manager) are not
+# parsed here.
+#
+# No rule uses -> Record: gotextfsm emits the single record at EOF, so
+# every captured field lands in the same record regardless of the order
+# the statements appear in.
 
 
 Start
   ^; .*Created on release #(?P<release>YA\.[\d.]+)\s*$ -> Continue
-  ^hostname "(?P<hostname>\S+)"\s*$ -> Record
+  ^hostname "(?P<hostname>\S+)"\s*$ -> Continue
+  ^management-vlan (?P<management_vlan>\d+)\s*$ -> Continue
