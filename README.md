@@ -55,6 +55,22 @@ resource "aoss_primary_vlan" "this" {
 }
 ```
 
+### `aoss_trunk`
+
+Creates a trunk circuit (`trunk <ports> <name> <mode>` in the root
+configuration context). `ports` is a set of port numbers (1-255);
+consecutive ports are collapsed into ranges in the emitted line. `name`
+must be of the form `trk<N>` and `mode` must be `trunk` or `lacp`
+(default `lacp`).
+
+```hcl
+resource "aoss_trunk" "uplink" {
+  ports = [9, 10]
+  name  = "trk1"
+  mode  = "lacp"
+}
+```
+
 ### `aoss_vlan`
 
 Manages a VLAN and its member ports and trunk circuits. `tagged` and

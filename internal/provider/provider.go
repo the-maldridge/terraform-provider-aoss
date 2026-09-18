@@ -44,6 +44,7 @@ func New(version string) func() *schema.Provider {
 				"aoss_hostname":        aossHostnameResource(),
 				"aoss_management_vlan": aossManagementVLANResource(),
 				"aoss_primary_vlan":    aossPrimaryVLANResource(),
+				"aoss_trunk":           aossTrunkResource(),
 				"aoss_vlan":            aossVLANResource(),
 			},
 			DataSourcesMap: map[string]*schema.Resource{

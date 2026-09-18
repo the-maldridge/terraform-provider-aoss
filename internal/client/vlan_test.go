@@ -119,6 +119,7 @@ vlan 10
    tagged 1-10
    no tagged 5-8
    tagged 20
+   tagged Trk1-Trk2
    untagged 30
    no untagged 30
    untagged 40
@@ -138,7 +139,7 @@ vlan 20
 	} else if !reflect.DeepEqual(w, VLANConfig{
 		ID:       10,
 		Name:     "MIXED",
-		Tagged:   []string{"1", "2", "3", "4", "9", "10", "20"},
+		Tagged:   []string{"1", "2", "3", "4", "9", "10", "20", "Trk1", "Trk2"},
 		Untagged: []string{"40"},
 		DHCP:     true,
 	}) {
@@ -166,9 +167,9 @@ func TestParseRunningConfigVLANsErrors(t *testing.T) {
 			in:       "vlan 10\n   tagged 999\n   exit\n",
 			contains: "out of range",
 		},
-		"trunk in range": {
-			in:       "vlan 10\n   tagged trk1-2\n   exit\n",
-			contains: "invalid member range",
+		"trunk range inverted": {
+			in:       "vlan 10\n   tagged trk2-1\n   exit\n",
+			contains: "invalid trunk range",
 		},
 		"trunk too large": {
 			in:       "vlan 10\n   tagged trk256\n   exit\n",

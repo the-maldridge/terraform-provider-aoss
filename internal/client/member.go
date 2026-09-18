@@ -52,8 +52,8 @@ func trunkRef(s string) (string, error) {
 
 // ParseMemberRange parses a CLI member list such as "24", "1-23", or
 // "1-3,trk1" into a sorted, de-duplicated list of canonical member
-// references. Port ranges expand; a trunk may only appear on its own,
-// never as part of a range.
+// references. Port ranges expand; a trunk may appear as "Trk1" or as a
+// trunk range ("Trk1-Trk3") that expands like a port range.
 func ParseMemberRange(s string) ([]string, error) {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -64,16 +64,15 @@ func ParseMemberRange(s string) ([]string, error) {
 	for _, part := range strings.Split(s, ",") {
 		part = strings.TrimSpace(part)
 		if isTrunkRef(part) {
-			if strings.Contains(part, "-") {
-				return nil, fmt.Errorf("aoss: invalid member range %q: a trunk cannot be part of a range", part)
-			}
-			ref, err := ParseMember(part)
+			members, err := trunkMembers(part)
 			if err != nil {
 				return nil, err
 			}
-			if !seen[ref] {
-				seen[ref] = true
-				refs = append(refs, ref)
+			for _, ref := range members {
+				if !seen[ref] {
+					seen[ref] = true
+					refs = append(refs, ref)
+				}
 			}
 			continue
 		}
@@ -119,6 +118,39 @@ func parseOneRange(part string) (int, int, error) {
 	return start, end, nil
 }
 
+// trunkMembers parses a single trunk reference ("Trk1") or a trunk range
+// ("Trk1-Trk3") into its canonical trunk references.
+func trunkMembers(part string) ([]string, error) {
+	if !strings.Contains(part, "-") {
+		ref, err := ParseMember(part)
+		if err != nil {
+			return nil, err
+		}
+		return []string{ref}, nil
+	}
+	lo, hi, _ := strings.Cut(part, "-")
+	lo = strings.TrimSpace(lo)
+	hi = strings.TrimSpace(hi)
+	lo, _ = strings.CutPrefix(strings.ToLower(lo), "trk")
+	hi, _ = strings.CutPrefix(strings.ToLower(hi), "trk")
+	start, err := strconv.Atoi(lo)
+	if err != nil {
+		return nil, fmt.Errorf("aoss: invalid trunk %q", "trk"+lo)
+	}
+	end, err := strconv.Atoi(hi)
+	if err != nil {
+		return nil, fmt.Errorf("aoss: invalid trunk %q", "trk"+hi)
+	}
+	if start < 1 || end > MaxPort || start > end {
+		return nil, fmt.Errorf("aoss: invalid trunk range %q", part)
+	}
+	out := make([]string, 0, end-start+1)
+	for n := start; n <= end; n++ {
+		out = append(out, "Trk"+strconv.Itoa(n))
+	}
+	return out, nil
+}
+
 func isTrunkRef(part string) bool {
 	_, ok := strings.CutPrefix(strings.ToLower(strings.TrimSpace(part)), "trk")
 	return ok
@@ -140,8 +172,9 @@ func TrunkNumber(ref string) (int, bool) {
 
 // FormatMemberRange formats a list of member references as a canonical CLI
 // member string: port ranges collapsed (e.g. "1-3"), trunks in their own
-// trailing section in number order (e.g. "1-3,Trk1,Trk3"), ports before
-// trunks. Duplicate references are collapsed.
+// trailing section in number order with consecutive trunks collapsed into a
+// range (e.g. "1-3,Trk1-Trk2"), ports before trunks. Duplicate references
+// are collapsed.
 func FormatMemberRange(refs []string) string {
 	portSet := make(map[int]bool, len(refs))
 	trunkSet := make(map[int]bool, len(refs))
@@ -185,8 +218,26 @@ func FormatMemberRange(refs []string) string {
 	if len(ports) > 0 {
 		flush()
 	}
-	for _, n := range trunks {
-		parts = append(parts, "Trk"+strconv.Itoa(n))
+	var tstart, tprev int
+	flushTrunk := func() {
+		if tstart == tprev {
+			parts = append(parts, "Trk"+strconv.Itoa(tstart))
+		} else {
+			parts = append(parts, fmt.Sprintf("Trk%d-Trk%d", tstart, tprev))
+		}
+	}
+	for i, n := range trunks {
+		if i > 0 && n == tprev+1 {
+			tprev = n
+			continue
+		}
+		if i > 0 {
+			flushTrunk()
+		}
+		tstart, tprev = n, n
+	}
+	if len(trunks) > 0 {
+		flushTrunk()
 	}
 	return strings.Join(parts, ",")
 }
