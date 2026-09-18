@@ -234,6 +234,31 @@ func TestParseInterfaces(t *testing.T) {
 	}
 }
 
+func TestParseInterfacesTrunkMembers(t *testing.T) {
+	input := `
+ Status and Counters - Port Counters
+
+                                                                     Flow
+  Port       Total Bytes    Total Frames   Errors Rx    Drops Tx     Ctrl
+  ---------- -------------- -------------- ------------ ------------ ----
+  9-Trk1     0              0              0            0            off
+  10-Trk1    0              0              0            0            off
+  24         81,140,314     827,733        0            0            off
+`
+	got, err := ParseInterfaces(input)
+	if err != nil {
+		t.Fatalf("ParseInterfaces: %v", err)
+	}
+	want := []InterfaceCounters{
+		{Port: "9", Trunk: "Trk1", TotalBytes: "0", TotalFrames: "0", ErrorsRx: "0", DropsTx: "0", FlowCtrl: "off"},
+		{Port: "10", Trunk: "Trk1", TotalBytes: "0", TotalFrames: "0", ErrorsRx: "0", DropsTx: "0", FlowCtrl: "off"},
+		{Port: "24", Trunk: "", TotalBytes: "81,140,314", TotalFrames: "827,733", ErrorsRx: "0", DropsTx: "0", FlowCtrl: "off"},
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("ParseInterfaces() = %+v, want %+v", got, want)
+	}
+}
+
 func TestParseInterfaceDetail(t *testing.T) {
 	data, err := os.ReadFile("../../fixtures/aoss/shows/show_interface_detail.txt")
 	if err != nil {

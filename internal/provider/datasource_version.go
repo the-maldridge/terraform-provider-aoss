@@ -44,7 +44,7 @@ func aossVersionRead(ctx context.Context, d *schema.ResourceData, meta any) diag
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	output, err := cl.Show(ctx, "show version")

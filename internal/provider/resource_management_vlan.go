@@ -71,7 +71,7 @@ func aossManagementVLANDelete(ctx context.Context, d *schema.ResourceData, meta 
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	current, err := readManagementVLAN(ctx, cl)
@@ -104,7 +104,7 @@ func aossManagementVLANRead(ctx context.Context, d *schema.ResourceData, meta an
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	id, err := readManagementVLAN(ctx, cl)
@@ -130,7 +130,7 @@ func aossManagementVLANWrite(ctx context.Context, d *schema.ResourceData, meta a
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	if _, err := cl.SendConfig(ctx, fmt.Sprintf("management-vlan %d", id)); err != nil {

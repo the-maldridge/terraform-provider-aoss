@@ -80,8 +80,12 @@ type VLAN struct {
 }
 
 // InterfaceCounters is one row of the "show interfaces" summary table.
+// Port is the plain port number; Trunk holds the canonical trunk
+// reference ("Trk<N>") when the port is enslaved to a trunk and is empty
+// otherwise.
 type InterfaceCounters struct {
 	Port        string
+	Trunk       string
 	TotalBytes  string
 	TotalFrames string
 	ErrorsRx    string
@@ -306,7 +310,10 @@ func ParseVLAN(output string) ([]VLAN, error) {
 	return vlans, nil
 }
 
-// ParseInterfaces parses the "show interfaces" summary table.
+// ParseInterfaces parses the "show interfaces" summary table. A port
+// enslaved to a trunk carries its trunk reference as a "-Trk<N>" suffix
+// on the port number; it is captured into Trunk and normalized to the
+// canonical "Trk<N>" spelling.
 func ParseInterfaces(output string) ([]InterfaceCounters, error) {
 	rows, err := runTemplate("show_interfaces.textfsm", output)
 	if err != nil {
@@ -314,8 +321,13 @@ func ParseInterfaces(output string) ([]InterfaceCounters, error) {
 	}
 	ifaces := make([]InterfaceCounters, 0, len(rows))
 	for _, row := range rows {
+		trunk := strings.ToUpper(row["trunk"])
+		if trunk != "" {
+			trunk = "Trk" + strings.TrimPrefix(trunk, "TRK")
+		}
 		ifaces = append(ifaces, InterfaceCounters{
 			Port:        row["port"],
+			Trunk:       trunk,
 			TotalBytes:  row["total_bytes"],
 			TotalFrames: row["total_frames"],
 			ErrorsRx:    row["errors_rx"],

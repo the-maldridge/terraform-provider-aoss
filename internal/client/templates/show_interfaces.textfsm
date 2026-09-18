@@ -1,4 +1,5 @@
 Value port (.*)
+Value trunk (.*)
 Value total_bytes (.*)
 Value total_frames (.*)
 Value errors_rx (.*)
@@ -10,10 +11,11 @@ Value flow_ctrl (.*)
 #
 # Each data line looks like:
 #   "  1          0              0              0            0            off"
-# The "Flow" header wraps onto the line above the column headers, so the
-# header and separator lines do not match and are ignored. One record per
-# line; counters are comma-formatted.
+# A port enslaved to a trunk shows its number suffixed with the trunk
+# reference, e.g. "9-Trk1". The "Flow" header wraps onto the line above
+# the column headers, so the header and separator lines do not match and
+# are ignored. One record per line; counters are comma-formatted.
 
 
 Start
-  ^\s+(?P<port>\d+)\s+(?P<total_bytes>[\d,]+)\s+(?P<total_frames>[\d,]+)\s+(?P<errors_rx>[\d,]+)\s+(?P<drops_tx>[\d,]+)\s+(?P<flow_ctrl>\S+)\s*$ -> Record
+  ^\s+(?P<port>\d+)(?:-(?P<trunk>[tT][rR][kK]\d+))?\s+(?P<total_bytes>[\d,]+)\s+(?P<total_frames>[\d,]+)\s+(?P<errors_rx>[\d,]+)\s+(?P<drops_tx>[\d,]+)\s+(?P<flow_ctrl>\S+)\s*$ -> Record

@@ -60,7 +60,7 @@ func aossPrimaryVLANDelete(ctx context.Context, d *schema.ResourceData, meta any
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	current, err := readPrimaryVLAN(ctx, cl)
@@ -93,7 +93,7 @@ func aossPrimaryVLANRead(ctx context.Context, d *schema.ResourceData, meta any) 
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	id, err := readPrimaryVLAN(ctx, cl)
@@ -119,7 +119,7 @@ func aossPrimaryVLANWrite(ctx context.Context, d *schema.ResourceData, meta any)
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	if _, err := cl.SendConfig(ctx, fmt.Sprintf("primary-vlan %d", id)); err != nil {

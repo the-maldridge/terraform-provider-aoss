@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"regexp"
+	"sync"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -50,22 +51,38 @@ func validateHostname(v any, k string) ([]string, []error) {
 	return nil, nil
 }
 
+// switchMu serializes all switch sessions. The device accepts only a
+// small number of concurrent SSH sessions, and terraform runs resource
+// operations in parallel, so at most one session is open at a time: the
+// lock is taken in openSwitch and released in closeSwitch.
+var switchMu sync.Mutex
+
 // openSwitch builds and opens a client from the provider configuration.
-// Callers must Close the returned client.
+// Callers must release the session with closeSwitch.
 func openSwitch(ctx context.Context, cfg *Config) (*client.Client, error) {
+	switchMu.Lock()
 	cl, err := client.New(client.ClientConfig{
 		Host:     cfg.Host,
 		Username: cfg.Username,
 		Password: cfg.Password,
 	})
 	if err != nil {
+		switchMu.Unlock()
 		return nil, err
 	}
 	if err := cl.Open(ctx); err != nil {
 		_ = cl.Close(ctx)
+		switchMu.Unlock()
 		return nil, err
 	}
 	return cl, nil
+}
+
+// closeSwitch closes the session and releases switchMu.
+func closeSwitch(ctx context.Context, cl *client.Client) error {
+	err := cl.Close(ctx)
+	switchMu.Unlock()
+	return err
 }
 
 // readHostname fetches the hostname currently set on the switch.
@@ -94,7 +111,7 @@ func aossHostnameRead(ctx context.Context, d *schema.ResourceData, meta any) dia
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	name, err := readHostname(ctx, cl)
@@ -120,7 +137,7 @@ func aossHostnameWrite(ctx context.Context, d *schema.ResourceData, meta any) di
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	if _, err := cl.SendConfig(ctx, fmt.Sprintf(`hostname %q`, name)); err != nil {

@@ -42,13 +42,15 @@ func New(version string) func() *schema.Provider {
 			},
 			ResourcesMap: map[string]*schema.Resource{
 				"aoss_hostname":        aossHostnameResource(),
+				"aoss_interface":       aossInterfaceResource(),
 				"aoss_management_vlan": aossManagementVLANResource(),
 				"aoss_primary_vlan":    aossPrimaryVLANResource(),
 				"aoss_trunk":           aossTrunkResource(),
 				"aoss_vlan":            aossVLANResource(),
 			},
 			DataSourcesMap: map[string]*schema.Resource{
-				"aoss_version": aossVersionDataSource(),
+				"aoss_interfaces": aossInterfacesDataSource(),
+				"aoss_version":    aossVersionDataSource(),
 			},
 			ConfigureContextFunc: providerConfigure,
 		}

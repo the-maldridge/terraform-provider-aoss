@@ -140,7 +140,7 @@ func aossTrunkRead(ctx context.Context, d *schema.ResourceData, meta any) diag.D
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	trunks, err := readTrunks(ctx, cl)
@@ -178,7 +178,7 @@ func aossTrunkWrite(ctx context.Context, d *schema.ResourceData, meta any) diag.
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	var current *client.TrunkConfig
@@ -214,7 +214,7 @@ func aossTrunkDelete(ctx context.Context, d *schema.ResourceData, meta any) diag
 		return diag.FromErr(err)
 	}
 	defer func() {
-		_ = cl.Close(ctx)
+		_ = closeSwitch(ctx, cl)
 	}()
 
 	trunks, err := readTrunks(ctx, cl)

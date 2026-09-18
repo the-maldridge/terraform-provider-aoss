@@ -33,6 +33,22 @@ resource "aoss_hostname" "this" {
 }
 ```
 
+### `aoss_interface`
+
+Manages a single physical port's `interface <n>` configuration block.
+`interface` is the port number (1-255). `name` is the port name to assign
+(empty for the default); `shutdown` (default `false`) administratively
+shuts the port down. Removing the resource clears the port's name and
+shutdown, leaving the port at its defaults.
+
+```hcl
+resource "aoss_interface" "uplink" {
+  interface = 24
+  name      = "OPTIMUX-TIE"
+  shutdown  = false
+}
+```
+
 ### `aoss_management_vlan`
 
 Sets the management VLAN (`management-vlan <id>` in configuration mode).
@@ -97,4 +113,28 @@ Reads the software version reported by the switch.
 
 ```hcl
 data "aoss_version" "this" {}
+```
+
+### `aoss_interfaces`
+
+Returns the list of all interfaces on the switch: every physical port and
+every trunk circuit. Each entry has:
+
+- `name` - the configured port name (empty string when a port has no
+  configured name), or the trunk name (`trk<N>`) for logical interfaces.
+- `number` - the port number for physical interfaces; `0` for logical (trunk)
+  interfaces.
+- `type` - one of `physical` (standalone port), `trunk-member` (a port
+  enslaved to a trunk circuit), or `logical` (a trunk circuit).
+- `shutdown` - whether the port is administratively shut down (the inverse
+  of the `Port Enabled` state); always `false` for logical interfaces.
+- `running` - whether the link is up (the `Link Status`); for logical
+  interfaces, `true` when at least one member port is running.
+
+```hcl
+data "aoss_interfaces" "this" {}
+
+output "interfaces" {
+  value = data.aoss_interfaces.this.interfaces
+}
 ```
