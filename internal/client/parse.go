@@ -150,6 +150,7 @@ type RunningConfig struct {
 	Release        string
 	Hostname       string
 	ManagementVLAN string
+	PrimaryVLAN    string
 }
 
 // runTemplate loads the named embedded TextFSM template, runs the output
@@ -425,5 +426,6 @@ func ParseRunningConfig(output string) (RunningConfig, error) {
 		Release:        row["release"],
 		Hostname:       row["hostname"],
 		ManagementVLAN: row["management_vlan"],
+		PrimaryVLAN:    row["primary_vlan"],
 	}, nil
 }

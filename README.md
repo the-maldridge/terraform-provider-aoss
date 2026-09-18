@@ -44,6 +44,17 @@ resource "aoss_management_vlan" "this" {
 }
 ```
 
+### `aoss_primary_vlan`
+
+Sets the primary VLAN (`primary-vlan <id>` in configuration mode).
+`vlan_id` must be between 1 and 4094.
+
+```hcl
+resource "aoss_primary_vlan" "this" {
+  vlan_id = 1
+}
+```
+
 ### `aoss_vlan`
 
 Manages a VLAN and its member ports and trunk circuits. `tagged` and

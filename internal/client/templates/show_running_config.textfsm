@@ -1,13 +1,15 @@
 Value release (.*)
 Value hostname (.*)
 Value management_vlan (.*)
+Value primary_vlan (.*)
 
 # Parse the output of "show running-config" on an HP AOS-S switch.
 #
 # The running config is a nested block structure, not a table, so this
 # template is deliberately minimal: it captures the software release from
 # the header comment line, the device hostname from the hostname
-# statement, and the management VLAN from the management-vlan statement.
+# statement, the management VLAN from the management-vlan statement, and
+# the primary VLAN from the primary-vlan statement.
 # Nested blocks (vlan, interface, ip route, password manager) are not
 # parsed here.
 #
@@ -20,3 +22,4 @@ Start
   ^; .*Created on release #(?P<release>YA\.[\d.]+)\s*$ -> Continue
   ^hostname "(?P<hostname>\S+)"\s*$ -> Continue
   ^management-vlan (?P<management_vlan>\d+)\s*$ -> Continue
+  ^primary-vlan (?P<primary_vlan>\d+)\s*$ -> Continue
