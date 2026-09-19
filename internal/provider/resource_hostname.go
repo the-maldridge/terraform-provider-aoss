@@ -16,6 +16,7 @@ var hostnameRe = regexp.MustCompile(`^[A-Za-z0-9]([A-Za-z0-9._-]*[A-Za-z0-9])?$`
 
 func aossHostnameResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages the switch hostname.",
 		CreateContext: aossHostnameWrite,
 		ReadContext:   aossHostnameRead,
 		UpdateContext: aossHostnameWrite,

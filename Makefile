@@ -18,6 +18,9 @@ fmt:
 vet:
 	go vet ./...
 
+docs:
+	tfplugindocs generate
+
 install:
 	go install .
 
@@ -30,4 +33,4 @@ local:
 release:
 	goreleaser release --clean
 
-.PHONY: install test vet fmt debug local release
+.PHONY: install test vet fmt docs debug local release

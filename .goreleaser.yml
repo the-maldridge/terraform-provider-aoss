@@ -1,5 +1,8 @@
 version: 2
 project_name: terraform-provider-aoss
+before:
+  hooks:
+    - tfplugindocs generate
 builds:
   - env:
       - CGO_ENABLED=0

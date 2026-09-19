@@ -14,6 +14,7 @@ import (
 
 func aossInterfaceResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages a single physical port's interface configuration block: its name and shutdown state.",
 		CreateContext: aossInterfaceWrite,
 		ReadContext:   aossInterfaceRead,
 		UpdateContext: aossInterfaceWrite,

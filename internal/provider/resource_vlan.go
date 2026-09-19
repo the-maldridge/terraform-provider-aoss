@@ -13,6 +13,7 @@ import (
 
 func aossVLANResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages a VLAN and its member ports and trunk circuits.",
 		CreateContext: aossVLANWrite,
 		ReadContext:   aossVLANRead,
 		UpdateContext: aossVLANWrite,

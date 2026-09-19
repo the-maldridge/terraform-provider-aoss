@@ -17,6 +17,7 @@ var trunkNameRe = regexp.MustCompile(`^trk\d+$`)
 
 func aossTrunkResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages a trunk circuit: a named set of ports operating in trunk or LACP mode.",
 		CreateContext: aossTrunkWrite,
 		ReadContext:   aossTrunkRead,
 		UpdateContext: aossTrunkWrite,

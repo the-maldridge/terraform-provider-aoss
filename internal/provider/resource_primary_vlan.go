@@ -13,6 +13,7 @@ import (
 
 func aossPrimaryVLANResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages the primary VLAN.",
 		CreateContext: aossPrimaryVLANWrite,
 		ReadContext:   aossPrimaryVLANRead,
 		UpdateContext: aossPrimaryVLANWrite,

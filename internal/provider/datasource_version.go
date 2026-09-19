@@ -11,6 +11,7 @@ import (
 
 func aossVersionDataSource() *schema.Resource {
 	return &schema.Resource{
+		Description: "Provides information about the software version reported by the switch.",
 		ReadContext: aossVersionRead,
 		Schema: map[string]*schema.Schema{
 			"version": {

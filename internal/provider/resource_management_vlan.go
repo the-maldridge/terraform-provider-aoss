@@ -13,6 +13,7 @@ import (
 
 func aossManagementVLANResource() *schema.Resource {
 	return &schema.Resource{
+		Description:   "Manages the management VLAN.",
 		CreateContext: aossManagementVLANWrite,
 		ReadContext:   aossManagementVLANRead,
 		UpdateContext: aossManagementVLANWrite,

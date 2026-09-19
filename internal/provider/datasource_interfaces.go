@@ -15,6 +15,7 @@ import (
 
 func aossInterfacesDataSource() *schema.Resource {
 	return &schema.Resource{
+		Description: "Provides information about the switch's interfaces: every physical port and every trunk circuit.",
 		ReadContext: aossInterfacesRead,
 		Schema: map[string]*schema.Schema{
 			"interfaces": {
