@@ -1,7 +1,33 @@
 # Terraform Provider for HP AOS-S Switches
 
-This provider allows for idempotent configuration of switches running the HP
-AOS-S operating system.
+This provider allows for idempotent configuration of switches running
+the HP AOS-S operating system.  Switches in this line include the
+popular (and cheap) HP2350 series gigabit Ethernet switches.
+
+This switch works by initiating an SSH connection towards the switch
+and remotely driving the config interface.  Technically AOS-S has an
+API, but when I tried to get the documentation for this from HP's
+Networking Support site I encountered broken auth walls, expired
+certs, and broken HSTS pins (in that order).  I then saw a number of
+reports on the forums that the API regularly gets broken by point
+releases and has poor feature coverage.  Given those limitations,
+driving the CLI seemed like the better approach, and would let me use
+this provider as a proving ground before writing more complex
+providers that use this same kind of "drive the CLI" workflow.
+
+This provider would not have been possible without
+[scrapligo](https://github.com/scrapli/scrapligo) which was the part
+that I have been chewing on how to write for a few years, and was very
+relieved to find someone else has already written.  If this provider
+is useful to you, please support the scrapli team.
+
+> [!NOTE]
+>
+> This provider was developed with extensive use of a local LLM
+> cluster running Qwen3.8.  I started with an entire design for how
+> this needed to fit together and then farmed out the shockingly
+> tedious tasks of Terraform's type-system-in-a-type-system to a tool
+> rather than my already headache saturated meat brain.
 
 ## Requirements
 
